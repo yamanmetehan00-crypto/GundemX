@@ -175,26 +175,45 @@ body {
     transition: 0.3s;
 }
 
-/* Logo düzeltmesi - ESKİSİNİ DEĞİŞTİR */
+/* ==================== 
+   LOGO - MODERN BEYAZ KUTU TASARIMI 
+   ==================== */
 .logo {
     text-decoration: none;
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    gap: 2px;
-    font-size: 28px;
+    justify-content: center;
+    gap: 0;
+    font-size: 26px;
     font-weight: 900;
+    background: var(--white);
+    padding: 8px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1), 0 0 0 1px rgba(0,102,204,0.1);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.logo:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0,102,204,0.2), 0 0 0 2px var(--primary);
+    border-color: var(--primary-light);
 }
 
 .logo-text {
-    color: #ffffff; /* BEYAZ */
-    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    color: var(--primary);
+    letter-spacing: -1px;
+    font-weight: 900;
 }
 
 .logo-dot {
-    color: #0066CC; /* MAVİ */
-    background: #ffffff;
-    padding: 0 8px;
-    border-radius: 4px;
+    color: var(--white);
+    background: var(--primary);
+    padding: 2px 8px;
+    border-radius: 6px;
+    margin-left: 3px;
+    font-size: 0.9em;
+    box-shadow: 0 2px 8px rgba(0,102,204,0.3);
 }
 
 .search-box {
@@ -894,6 +913,11 @@ body {
         display: none;
     }
     
+    /* Mobil için logo ayarlaması */
+    .logo {
+        padding: 6px 15px;
+        font-size: 22px;
+    }
     
     .nav-list {
         flex-direction: column;
@@ -940,22 +964,12 @@ body {
     .slide-content {
         padding: 20px;
     }
-}
-
-/* ==================== 
-   LOGO DÜZELTMESİ 
-   ==================== */
-.logo-text {
-    color: #ffffff !important;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-}
-
-.logo-dot {
-    color: #0066CC !important;
-    background: #ffffff;
-    padding: 0 8px;
-    border-radius: 4px;
-    margin-left: 2px;
+    
+    /* Küçük mobil için logo */
+    .logo {
+        padding: 5px 12px;
+        font-size: 20px;
+    }
 }
 
 /* ==================== 
@@ -1011,9 +1025,3 @@ body.menu-open {
     pointer-events: auto;
 }
 
-/* Eğer GitHub Pages'de /repo-adi/ şeklindeyse */
-/* href'leri ./haberler/ şeklinde değiştir */
-
-
-
-CSS bu yaptım ama şimdi de ana sayfada menü sabit kaldı üst tarafta böyle ortalı

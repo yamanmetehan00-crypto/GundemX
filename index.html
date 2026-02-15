@@ -1,1 +1,271 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haber Sitesi - Son Dakika Haberleri</title>
+    <meta name="description" content="Son dakika haberleri, güncel gelişmeler, ekonomi, spor, dünya ve daha fazlası">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Google AdSense için -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loader-container">
+            <div class="loader-x">X</div>
+            <div class="loader-text">LOADING</div>
+            <div class="loader-bar">
+                <div class="loader-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-left">
+                    <span class="date" id="current-date"></span>
+                </div>
+                <div class="header-right">
+                    <a href="#" class="weather">
+                        <span class="weather-icon">☀️</span>
+                        <span class="weather-text">Hava Durumu</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="header-main">
+            <div class="container">
+                <button class="menu-toggle" id="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <a href="/" class="logo">
+                    <span class="logo-text">HABER</span>
+                    <span class="logo-dot">X</span>
+                </a>
+                
+                <div class="search-box">
+                    <input type="text" placeholder="Haber ara..." id="search-input">
+                    <button class="search-btn">🔍</button>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="main-nav" id="main-nav">
+            <div class="container">
+                <ul class="nav-list">
+                    <li><a href="/" class="active">ANA SAYFA</a></li>
+                    <li><a href="/haberler/gundem/">GÜNDEM</a></li>
+                    <li><a href="/haberler/ekonomi/">EKONOMİ</a></li>
+                    <li><a href="/haberler/spor/">SPOR</a></li>
+                    <li><a href="/haberler/dunya/">DÜNYA</a></li>
+                    <li><a href="/haberler/teknoloji/">TEKNOLOJİ</a></li>
+                    <li><a href="/haberler/magazin/">MAGAZİN</a></li>
+                    <li><a href="/haberler/saglik/">SAĞLIK</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Breaking News Ticker -->
+    <div class="breaking-news">
+        <div class="container">
+            <span class="breaking-label">SON DAKİKA</span>
+            <div class="ticker-wrapper">
+                <div class="ticker-content" id="ticker-content">
+                    <!-- JS ile doldurulacak -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Slider -->
+    <section class="hero-slider">
+        <div class="container">
+            <div class="slider-container" id="main-slider">
+                <div class="slider-wrapper" id="slider-wrapper">
+                    <!-- JS ile doldurulacak -->
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-prev">‹</button>
+                    <div class="slider-dots" id="slider-dots"></div>
+                    <button class="slider-next">›</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Economy Bar -->
+    <section class="economy-bar">
+        <div class="container">
+            <div class="economy-items" id="economy-items">
+                <div class="economy-item up">
+                    <span class="eco-name">Dolar</span>
+                    <span class="eco-value" id="dolar">--,--</span>
+                    <span class="eco-change">% --</span>
+                </div>
+                <div class="economy-item down">
+                    <span class="eco-name">Euro</span>
+                    <span class="eco-value" id="euro">--,--</span>
+                    <span class="eco-change">% --</span>
+                </div>
+                <div class="economy-item up">
+                    <span class="eco-name">Altın</span>
+                    <span class="eco-value" id="altin">--,--</span>
+                    <span class="eco-change">% --</span>
+                </div>
+                <div class="economy-item down">
+                    <span class="eco-name">Borsa</span>
+                    <span class="eco-value" id="borsa">--,--</span>
+                    <span class="eco-change">% --</span>
+                </div>
+                <div class="economy-item up">
+                    <span class="eco-name">Bitcoin</span>
+                    <span class="eco-value" id="bitcoin">--,--</span>
+                    <span class="eco-change">% --</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ad Banner Top -->
+    <div class="ad-container top-ad">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+             data-ad-slot="XXXXXXXXXX"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="content-grid">
+                <!-- Left Column - News -->
+                <div class="news-column">
+                    
+                    <!-- Category Tabs -->
+                    <div class="category-tabs">
+                        <button class="tab-btn active" data-cat="all">TÜMÜ</button>
+                        <button class="tab-btn" data-cat="gundem">GÜNDEM</button>
+                        <button class="tab-btn" data-cat="ekonomi">EKONOMİ</button>
+                        <button class="tab-btn" data-cat="spor">SPOR</button>
+                        <button class="tab-btn" data-cat="dunya">DÜNYA</button>
+                    </div>
+
+                    <!-- News Grid -->
+                    <div class="news-grid" id="news-grid">
+                        <!-- Haberler buraya gelecek -->
+                    </div>
+
+                    <!-- Load More -->
+                    <div class="load-more-wrapper">
+                        <button class="load-more-btn" id="load-more">DAHA FAZLA HABER</button>
+                    </div>
+                </div>
+
+                <!-- Right Column - Sidebar -->
+                <aside class="sidebar">
+                    <!-- Ad -->
+                    <div class="ad-container sidebar-ad">
+                        <ins class="adsbygoogle"
+                             style="display:block"
+                             data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                             data-ad-slot="XXXXXXXXXX"></ins>
+                    </div>
+
+                    <!-- Popular News -->
+                    <div class="widget popular-widget">
+                        <h3 class="widget-title">ÇOK OKUNANLAR</h3>
+                        <ul class="popular-list" id="popular-list">
+                            <!-- JS ile doldurulacak -->
+                        </ul>
+                    </div>
+
+                    <!-- Video Widget -->
+                    <div class="widget video-widget">
+                        <h3 class="widget-title">VİDEO HABERLER</h3>
+                        <div class="video-list" id="video-list">
+                            <!-- JS ile doldurulacak -->
+                        </div>
+                    </div>
+
+                    <!-- Ad -->
+                    <div class="ad-container sidebar-ad">
+                        <ins class="adsbygoogle"
+                             style="display:block"
+                             data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                             data-ad-slot="XXXXXXXXXX"></ins>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <h4>KURUMSAL</h4>
+                        <ul>
+                            <li><a href="/hakkimizda.html">Hakkımızda</a></li>
+                            <li><a href="/kunye.html">Künye</a></li>
+                            <li><a href="/iletisim.html">İletişim</a></li>
+                            <li><a href="/reklam.html">Reklam</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>KATEGORİLER</h4>
+                        <ul>
+                            <li><a href="/haberler/gundem/">Gündem</a></li>
+                            <li><a href="/haberler/ekonomi/">Ekonomi</a></li>
+                            <li><a href="/haberler/spor/">Spor</a></li>
+                            <li><a href="/haberler/dunya/">Dünya</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>DiĞER</h4>
+                        <ul>
+                            <li><a href="/yazarlar.html">Yazarlar</a></li>
+                            <li><a href="/yerel-haberler.html">Yerel Haberler</a></li>
+                            <li><a href="/son-dakika.html">Son Dakika</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col social-col">
+                        <h4>SOSYAL MEDYA</h4>
+                        <div class="social-links">
+                            <a href="#" class="social-btn facebook">f</a>
+                            <a href="#" class="social-btn twitter">X</a>
+                            <a href="#" class="social-btn instagram">📷</a>
+                            <a href="#" class="social-btn youtube">▶</a>
+                        </div>
+                        <div class="whatsapp-contact">
+                            <a href="https://wa.me/905XXXXXXXXX" class="whatsapp-btn">
+                                <span>📱</span>
+                                <span>İhbar Hattı: 0543 329 88 27</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 Tüm Hakları Saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
 

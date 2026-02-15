@@ -5,7 +5,7 @@
     --primary: #0066CC;
     --primary-dark: #0052a3;
     --primary-light: #e6f2ff;
-    --secondary: #0066CC;
+    --secondary: #FF0000;
     --text: #1a1a1a;
     --text-light: #666;
     --bg: #f5f5f5;
@@ -126,8 +126,9 @@ body {
     z-index: 1000;
 }
 
+/* HEADER-TOP KIRMIZI ARKAPLAN */
 .header-top {
-    background: var(--primary);
+    background: var(--secondary);
     color: var(--white);
     padding: 8px 0;
     font-size: 13px;
@@ -147,7 +148,9 @@ body {
     gap: 5px;
 }
 
+/* HEADER-MAIN KIRMIZI ARKAPLAN */
 .header-main {
+    background: var(--secondary);
     padding: 15px 0;
 }
 
@@ -171,11 +174,11 @@ body {
 .menu-toggle span {
     width: 25px;
     height: 3px;
-    background: var(--primary);
+    background: var(--white);
     transition: 0.3s;
 }
 
-/* Logo düzeltmesi - ESKİSİNİ DEĞİŞTİR */
+/* LOGO - Gündem BEYAZ, X MAVİ */
 .logo {
     text-decoration: none;
     display: flex;
@@ -186,21 +189,22 @@ body {
 }
 
 .logo-text {
-    color: #ffffff; /* BEYAZ */
+    color: var(--white);
     text-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
 
 .logo-dot {
-    color: #0066CC; /* MAVİ */
-    background: #ffffff;
+    color: var(--primary);
+    background: var(--white);
     padding: 0 8px;
     border-radius: 4px;
+    margin-left: 2px;
 }
 
 .search-box {
     display: flex;
     align-items: center;
-    background: var(--bg);
+    background: rgba(255,255,255,0.2);
     border-radius: 25px;
     padding: 5px 15px;
     flex: 0 1 300px;
@@ -213,6 +217,11 @@ body {
     flex: 1;
     padding: 8px;
     font-size: 14px;
+    color: var(--white);
+}
+
+.search-box input::placeholder {
+    color: rgba(255,255,255,0.7);
 }
 
 .search-btn {
@@ -220,6 +229,7 @@ body {
     border: none;
     cursor: pointer;
     font-size: 18px;
+    color: var(--white);
 }
 
 /* Navigation */
@@ -247,6 +257,66 @@ body {
 .nav-list a:hover,
 .nav-list a.active {
     background: var(--primary-dark);
+}
+
+/* ==================== 
+   MOBİL MENÜ 
+   ==================== */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+    
+    .search-box {
+        display: none;
+    }
+    
+    .main-nav {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 80%;
+        max-width: 300px;
+        height: 100vh;
+        background: var(--primary);
+        transition: left 0.3s ease;
+        z-index: 1001;
+        overflow-y: auto;
+    }
+    
+    .main-nav.active {
+        left: 0;
+    }
+    
+    .nav-list {
+        flex-direction: column;
+        padding: 20px;
+    }
+    
+    .nav-list a {
+        padding: 15px;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+}
+
+/* Menü Overlay */
+.menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1000;
+}
+
+.menu-overlay.active {
+    display: block;
+}
+
+body.menu-open {
+    overflow: hidden;
 }
 
 /* ==================== 
@@ -332,6 +402,7 @@ body {
     min-width: 100%;
     position: relative;
     height: 450px;
+    cursor: pointer;
 }
 
 .slide img {
@@ -886,20 +957,6 @@ body {
 }
 
 @media (max-width: 768px) {
-    .menu-toggle {
-        display: flex;
-    }
-    
-    .search-box {
-        display: none;
-    }
-    
-    
-    .nav-list {
-        flex-direction: column;
-        padding: 20px;
-    }
-    
     .slide {
         height: 300px;
     }
@@ -941,77 +998,4 @@ body {
         padding: 20px;
     }
 }
-
-/* ==================== 
-   LOGO DÜZELTMESİ 
-   ==================== */
-.logo-text {
-    color: #ffffff !important;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-}
-
-.logo-dot {
-    color: #0066CC !important;
-    background: #ffffff;
-    padding: 0 8px;
-    border-radius: 4px;
-    margin-left: 2px;
-}
-
-/* ==================== 
-   MOBİL MENÜ KAPANMA 
-   ==================== */
-.menu-overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.5);
-    z-index: 998;
-}
-
-.menu-overlay.active {
-    display: block;
-}
-
-.main-nav {
-    z-index: 999;
-}
-
-/* Menü açıkken body scroll olmasın */
-body.menu-open {
-    overflow: hidden;
-}
-
-/* ==================== 
-   HABER KART TIKLAMA 
-   ==================== */
-.news-card,
-.slide {
-    cursor: pointer !important;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.news-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-}
-
-.slide:hover .slide-content {
-    background: linear-gradient(transparent, rgba(0,102,204,0.9));
-}
-
-/* ==================== 
-   404 HATASI ÇÖZÜMÜ - LİNKLER 
-   ==================== */
-/* Kategori linkleri için kesin yollar */
-.nav-list a[href^="./haberler/"] {
-    pointer-events: auto;
-}
-
-/* Eğer GitHub Pages'de /repo-adi/ şeklindeyse */
-/* href'leri ./haberler/ şeklinde değiştir */
-
 

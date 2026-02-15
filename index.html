@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Haber Sitesi - Son Dakika Haberleri</title>
+    <title>GündemX - Son Dakika Haberleri</title>
     <meta name="description" content="Son dakika haberleri, güncel gelişmeler, ekonomi, spor, dünya ve daha fazlası">
     <link rel="stylesheet" href="css/style.css">
-    <!-- Google AdSense için -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
 <body>
@@ -21,6 +20,9 @@
         </div>
     </div>
 
+    <!-- Overlay for mobile menu -->
+    <div class="menu-overlay" id="menu-overlay"></div>
+
     <!-- Header -->
     <header class="main-header">
         <div class="header-top">
@@ -31,7 +33,7 @@
                 <div class="header-right">
                     <a href="#" class="weather">
                         <span class="weather-icon">☀️</span>
-                        <span class="weather-text">Hava Durumu</span>
+                        <span class="weather-text">İstanbul 12°C</span>
                     </a>
                 </div>
             </div>
@@ -45,7 +47,7 @@
                     <span></span>
                 </button>
                 
-                <a href="/" class="logo">
+                <a href="./" class="logo">
                     <span class="logo-text">Gündem</span>
                     <span class="logo-dot">X</span>
                 </a>
@@ -60,15 +62,14 @@
         <nav class="main-nav" id="main-nav">
             <div class="container">
                 <ul class="nav-list">
-                    <li><a href="/" class="active">ANA SAYFA</a></li>
-<li><a href="./haberler/gundem/index.html">GÜNDEM</a></li>
-<li><a href="./haberler/ekonomi/index.html">EKONOMİ</a></li>
-<li><a href="./haberler/spor/index.html">SPOR</a></li>
-<li><a href="./haberler/dunya/index.html">DÜNYA</a></li>
-<li><a href="./haberler/teknoloji/index.html">TEKNOLOJİ</a></li>
-<li><a href="./haberler/magazin/index.html">MAGAZİN</a></li>
-<li><a href="./haberler/saglik/index.html">SAĞLIK</a></li>
-
+                    <li><a href="./" class="active">ANA SAYFA</a></li>
+                    <li><a href="./haberler/gundem/index.html">GÜNDEM</a></li>
+                    <li><a href="./haberler/ekonomi/index.html">EKONOMİ</a></li>
+                    <li><a href="./haberler/spor/index.html">SPOR</a></li>
+                    <li><a href="./haberler/dunya/index.html">DÜNYA</a></li>
+                    <li><a href="./haberler/teknoloji/index.html">TEKNOLOJİ</a></li>
+                    <li><a href="./haberler/magazin/index.html">MAGAZİN</a></li>
+                    <li><a href="./haberler/saglik/index.html">SAĞLIK</a></li>
                 </ul>
             </div>
         </nav>
@@ -109,27 +110,27 @@
                 <div class="economy-item up">
                     <span class="eco-name">Dolar</span>
                     <span class="eco-value" id="dolar">--,--</span>
-                    <span class="eco-change">% --</span>
+                    <span class="eco-change">% 0,19</span>
                 </div>
                 <div class="economy-item down">
                     <span class="eco-name">Euro</span>
                     <span class="eco-value" id="euro">--,--</span>
-                    <span class="eco-change">% --</span>
+                    <span class="eco-change">% 0,02</span>
                 </div>
                 <div class="economy-item up">
                     <span class="eco-name">Altın</span>
                     <span class="eco-value" id="altin">--,--</span>
-                    <span class="eco-change">% --</span>
+                    <span class="eco-change">% 2,56</span>
                 </div>
                 <div class="economy-item down">
                     <span class="eco-name">Borsa</span>
                     <span class="eco-value" id="borsa">--,--</span>
-                    <span class="eco-change">% --</span>
+                    <span class="eco-change">% 0</span>
                 </div>
                 <div class="economy-item up">
                     <span class="eco-name">Bitcoin</span>
                     <span class="eco-value" id="bitcoin">--,--</span>
-                    <span class="eco-change">% --</span>
+                    <span class="eco-change">% 1,27</span>
                 </div>
             </div>
         </div>
@@ -218,27 +219,27 @@
                     <div class="footer-col">
                         <h4>KURUMSAL</h4>
                         <ul>
-                            <li><a href="/hakkimizda.html">Hakkımızda</a></li>
-                            <li><a href="/kunye.html">Künye</a></li>
-                            <li><a href="/iletisim.html">İletişim</a></li>
-                            <li><a href="/reklam.html">Reklam</a></li>
+                            <li><a href="./hakkimizda.html">Hakkımızda</a></li>
+                            <li><a href="./kunye.html">Künye</a></li>
+                            <li><a href="./iletisim.html">İletişim</a></li>
+                            <li><a href="./reklam.html">Reklam</a></li>
                         </ul>
                     </div>
                     <div class="footer-col">
                         <h4>KATEGORİLER</h4>
                         <ul>
-                            <li><a href="/haberler/gundem/">Gündem</a></li>
-                            <li><a href="/haberler/ekonomi/">Ekonomi</a></li>
-                            <li><a href="/haberler/spor/">Spor</a></li>
-                            <li><a href="/haberler/dunya/">Dünya</a></li>
+                            <li><a href="./haberler/gundem/index.html">Gündem</a></li>
+                            <li><a href="./haberler/ekonomi/index.html">Ekonomi</a></li>
+                            <li><a href="./haberler/spor/index.html">Spor</a></li>
+                            <li><a href="./haberler/dunya/index.html">Dünya</a></li>
                         </ul>
                     </div>
                     <div class="footer-col">
-                        <h4>DiĞER</h4>
+                        <h4>DİĞER</h4>
                         <ul>
-                            <li><a href="/yazarlar.html">Yazarlar</a></li>
-                            <li><a href="/yerel-haberler.html">Yerel Haberler</a></li>
-                            <li><a href="/son-dakika.html">Son Dakika</a></li>
+                            <li><a href="./yazarlar.html">Yazarlar</a></li>
+                            <li><a href="./yerel-haberler.html">Yerel Haberler</a></li>
+                            <li><a href="./son-dakika.html">Son Dakika</a></li>
                         </ul>
                     </div>
                     <div class="footer-col social-col">
@@ -269,4 +270,5 @@
     <script src="js/main.js"></script>
 </body>
 </html>
+
 

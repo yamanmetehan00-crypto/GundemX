@@ -1,1 +1,27 @@
 
+{
+  "haberler": [
+    {
+      "id": 1,
+      "baslik": "Trump, Hepsiyle ABD'de Görüşecek! Aralarında Türkiye de Var",
+      "ozet": "ABD Başkanı Trump, önümüzdeki hafta bir dizi önemli görüşme gerçekleştirecek...",
+      "icerik": "<p>Buraya haberin tam içeriği HTML olarak gelecek...</p>",
+      "kategori": "Dünya",
+      "kategoriSlug": "dunya",
+      "resim": "https://via.placeholder.com/800x450/0066CC/FFFFFF?text=Trump+Gorusme",
+      "tarih": "15 Şubat 2026",
+      "saat": "19:38",
+      "url": "/haberler/dunya/trump-hepsiyle-abdde-gorusucek.html",
+      "yazar": "Editör",
+      "goruntulenme": 15420,
+      "slider": true,
+      "sonDakika": true,
+      "video": false,
+      "etiketler": ["trump", "abd", "dis politika"]
+    }
+  ],
+  "meta": {
+    "toplam": 0,
+    "guncelleme": "2026-02-15T19:38:00"
+  }
+}

@@ -180,10 +180,12 @@ body {
 
 /* LOGO - Gündem BEYAZ, X MAVİ */
 .logo {
+/* LOGO - Gündem BEYAZ, X MAVİ (arkaplan yok) */
+.logo {
     text-decoration: none;
     display: flex;
     align-items: center;
-    gap: 2px;
+    gap: 0; /* Yakınlaştırmak için gap 0 */
     font-size: 28px;
     font-weight: 900;
 }
@@ -191,15 +193,18 @@ body {
 .logo-text {
     color: var(--white);
     text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    margin-right: 2px; /* X'e yakın */
 }
 
 .logo-dot {
-    color: var(--primary);
-    background: var(--white);
-    padding: 0 8px;
-    border-radius: 4px;
-    margin-left: 2px;
+    color: #0066CC; /* MAVİ */
+    background: none; /* BEYAZ ARKAPLAN KALDIRILDI */
+    padding: 0; /* PADDING KALDIRILDI */
+    border-radius: 0; /* BORDER RADIUS KALDIRILDI */
+    margin-left: 0;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3); /* Gölge eklendi */
 }
+
 
 .search-box {
     display: flex;

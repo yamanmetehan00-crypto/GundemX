@@ -175,6 +175,7 @@ body {
     transition: 0.3s;
 }
 
+/* Logo düzeltmesi - ESKİSİNİ DEĞİŞTİR */
 .logo {
     text-decoration: none;
     display: flex;
@@ -185,12 +186,15 @@ body {
 }
 
 .logo-text {
-    color: var(--primary);
+    color: #ffffff; /* BEYAZ */
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
 
 .logo-dot {
-    color: var(--secondary);
-    position: relative;
+    color: #0066CC; /* MAVİ */
+    background: #ffffff;
+    padding: 0 8px;
+    border-radius: 4px;
 }
 
 .search-box {

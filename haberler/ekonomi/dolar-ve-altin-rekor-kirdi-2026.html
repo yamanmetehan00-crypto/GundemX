@@ -1,1 +1,367 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dolar ve Altın Rekor Kırdı: Piyasalar Karıştı - HaberX</title>
+    <meta name="description" content="Dolar kuru tarihi zirveyi gördü, gram altın rekor kırdı. Uzmanlar piyasaların durumunu değerlendirdi. İşte detaylar...">
+    <meta property="og:title" content="Dolar ve Altın Rekor Kırdı: Piyasalar Karıştı">
+    <meta property="og:description" content="Dolar kuru tarihi zirveyi gördü, gram altın rekor kırdı">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1611974765270-ca1258634369?w=800">
+    <link rel="stylesheet" href="../../css/style.css">
+    <style>
+        .haber-detail {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 12px;
+            margin: 20px 0;
+        }
+        .haber-header {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--primary-light);
+        }
+        .haber-kategori {
+            display: inline-block;
+            background: var(--primary);
+            color: var(--white);
+            padding: 5px 15px;
+            font-size: 12px;
+            font-weight: 700;
+            border-radius: 3px;
+            margin-bottom: 15px;
+        }
+        .haber-baslik {
+            font-size: 32px;
+            font-weight: 800;
+            line-height: 1.3;
+            margin-bottom: 15px;
+            color: var(--text);
+        }
+        .haber-meta {
+            display: flex;
+            gap: 20px;
+            color: var(--text-light);
+            font-size: 14px;
+            flex-wrap: wrap;
+        }
+        .haber-meta span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .haber-gorsel {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 25px;
+        }
+        .haber-icerik {
+            font-size: 17px;
+            line-height: 1.8;
+            color: var(--text);
+        }
+        .haber-icerik p {
+            margin-bottom: 20px;
+        }
+        .haber-icerik h2 {
+            font-size: 24px;
+            margin: 30px 0 15px;
+            color: var(--primary);
+        }
+        .haber-icerik ul {
+            margin: 20px 0;
+            padding-left: 30px;
+        }
+        .haber-icerik li {
+            margin-bottom: 10px;
+        }
+        .etiketler {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+        }
+        .etiketler span {
+            display: inline-block;
+            background: var(--bg);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 13px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        .yazar-kutu {
+            background: var(--primary-light);
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 30px;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        .yazar-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 24px;
+            font-weight: 700;
+        }
+        .yazar-info h4 {
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+        .yazar-info p {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+        @media (max-width: 768px) {
+            .haber-baslik { font-size: 24px; }
+            .haber-gorsel { height: 250px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loader-container">
+            <div class="loader-x">X</div>
+            <div class="loader-text">LOADING</div>
+            <div class="loader-bar">
+                <div class="loader-progress"></div>
+            </div>
+        </div>
+    </div>
 
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-left">
+                    <span class="date">16 Şubat 2026 Pazar</span>
+                </div>
+                <div class="header-right">
+                    <a href="#" class="weather">
+                        <span class="weather-icon">☀️</span>
+                        <span class="weather-text">İstanbul 12°C</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="header-main">
+            <div class="container">
+                <button class="menu-toggle" id="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <a href="/" class="logo">
+                    <span class="logo-text">HABER</span>
+                    <span class="logo-dot">X</span>
+                </a>
+                
+                <div class="search-box">
+                    <input type="text" placeholder="Haber ara..." id="search-input">
+                    <button class="search-btn">🔍</button>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="main-nav" id="main-nav">
+            <div class="container">
+                <ul class="nav-list">
+                    <li><a href="/">ANA SAYFA</a></li>
+                    <li><a href="/haberler/gundem/">GÜNDEM</a></li>
+                    <li><a href="/haberler/ekonomi/" class="active">EKONOMİ</a></li>
+                    <li><a href="/haberler/spor/">SPOR</a></li>
+                    <li><a href="/haberler/dunya/">DÜNYA</a></li>
+                    <li><a href="/haberler/teknoloji/">TEKNOLOJİ</a></li>
+                    <li><a href="/haberler/magazin/">MAGAZİN</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Breaking News -->
+    <div class="breaking-news">
+        <div class="container">
+            <span class="breaking-label">SON DAKİKA</span>
+            <div class="ticker-wrapper">
+                <div class="ticker-content">
+                    <a href="#">Dolar ve altın rekor kırdı</a>
+                    <a href="#">Galatasaray'da flaş gelişme</a>
+                    <a href="#">Trump'tan yeni açıklama</a>
+                    <a href="#">Dolar ve altın rekor kırdı</a>
+                    <a href="#">Galatasaray'da flaş gelişme</a>
+                    <a href="#">Trump'tan yeni açıklama</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <article class="haber-detail">
+                <div class="haber-header">
+                    <span class="haber-kategori">EKONOMİ</span>
+                    <h1 class="haber-baslik">Dolar ve Altın Rekor Kırdı: Piyasalar Karıştı, Uzmanlar Ne Diyor?</h1>
+                    <div class="haber-meta">
+                        <span>✍️ Ahmet Yılmaz</span>
+                        <span>📅 16 Şubat 2026</span>
+                        <span>🕐 14:30</span>
+                        <span>👁️ 24.586 görüntülenme</span>
+                        <span>💬 128 yorum</span>
+                    </div>
+                </div>
+
+                <img src="https://images.unsplash.com/photo-1611974765270-ca1258634369?w=1200" 
+                     alt="Dolar ve Altın" 
+                     class="haber-gorsel">
+
+                <div class="haber-icerik">
+                    <p><strong>Dolar kuru ve gram altın fiyatlarında tarihi rekorlar kırıldı.</strong> Piyasaların nabzını tutan yatırımcılar ve ekonomi uzmanları, yaşanan bu hareketliliğin arkasındaki nedenleri ve önümüzdeki dönem beklentilerini değerlendirdi. İşte detaylar...</p>
+
+                    <p>Bugün sabah saatlerinde <strong>dolar kuru 43,73 TL</strong> seviyesini görerek tüm zamanların en yüksek seviyesine ulaştı. Euro ise 51,93 TL'den işlem gördü. Öte yandan <strong>gram altın 7.076 TL</strong> ile rekor kırarken, çeyrek altın 11.500 TL'yi aştı.</p>
+
+                    <h2>Piyasalar Neden Hareketlendi?</h2>
+                    
+                    <p>Yaşanan bu yükselişte birkaç önemli etken rol oynuyor:</p>
+                    
+                    <ul>
+                        <li><strong>Küresel belirsizlikler:</strong> ABD başkanlık seçimleri sonrası oluşan yeni dönemde ticaret savaşları endişesi piyasaları baskılıyor.</li>
+                        <li><strong>Merkez Bankası politikaları:</strong> Faiz indirim beklentileri yerli para birimini değersizleştiriyor.</li>
+                        <li><strong>Enflasyon verileri:</strong> Son açıklanan enflasyon rakamları reel getiri arayışını tetikledi.</li>
+                        <li><strong>Jeopolitik riskler:</strong> Bölgesel gerilimler güvenli liman talebini artırıyor.</li>
+                    </ul>
+
+                    <h2>Uzmanlar Ne Diyor?</h2>
+
+                    <p>Ekonomist <strong>Prof. Dr. Mehmet Demir</strong>, konuya ilişkin yaptığı açıklamada, "Kısa vadede dalgalanma devam edebilir. Ancak Merkez Bankası'nın müdahaleleri ve swap anlaşmaları ile kurun stabilize olması bekleniyor" dedi.</p>
+
+                    <p>Bankacılık sektörü analisti <strong>Ayşe Kaya</strong> ise "Yatırımcılar için bu dönemde portföy çeşitlendirmesi önemli. Sadece döviz veya altına yönelmek yerine dengeli bir dağılım tavsiye ediyoruz" şeklinde konuştu.</p>
+
+                    <h2>Vatandaş Ne Yapmalı?</h2>
+
+                    <p>Yaşanan bu gelişmeler karşısında vatandaşların alabileceği bazı önlemler:</p>
+
+                    <ul>
+                        <li>Acil nakit ihtiyacı olmayan birikimler için uzun vadeli düşünmek</li>
+                        <li>Döviz ve altın alım-satımında komisyon oranlarını karşılaştırmak</li>
+                        <li>Resmi kanalları tercih etmek</li>
+                        <li>Yatırım kararlarında uzman görüşü almak</li>
+                    </ul>
+
+                    <p>Piyasaların önümüzdeki günlerde nasıl şekilleneceği ise tüm yatırımcıların merakla beklediği bir soru işareti olarak duruyor.</p>
+                </div>
+
+                <div class="etiketler">
+                    <span>#dolar</span>
+                    <span>#altın</span>
+                    <span>#ekonomi</span>
+                    <span>#döviz</span>
+                    <span>#piyasalar</span>
+                    <span>#enflasyon</span>
+                </div>
+
+                <div class="yazar-kutu">
+                    <div class="yazar-avatar">AY</div>
+                    <div class="yazar-info">
+                        <h4>Ahmet Yılmaz</h4>
+                        <p>Ekonomi Editörü | 15 yıllık finans gazeteciliği deneyimi</p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Sidebar -->
+            <aside class="sidebar" style="margin-top: 20px;">
+                <div class="widget popular-widget">
+                    <h3 class="widget-title">BU HABER DE İLGİNİZİ ÇEKEBİLİR</h3>
+                    <ul class="popular-list">
+                        <li>
+                            <span class="popular-number">1</span>
+                            <a href="#">Merkez Bankası'ndan flaş faiz kararı</a>
+                        </li>
+                        <li>
+                            <span class="popular-number">2</span>
+                            <a href="#">BES'te yeni dönem başlıyor</a>
+                        </li>
+                        <li>
+                            <span class="popular-number">3</span>
+                            <a href="#">Konut fiyatlarında son durum</a>
+                        </li>
+                        <li>
+                            <span class="popular-number">4</span>
+                            <a href="#">Kripto para piyasasında sert düşüş</a>
+                        </li>
+                        <li>
+                            <span class="popular-number">5</span>
+                            <a href="#">Emekli maaşlarına zam gelecek mi?</a>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <h4>KURUMSAL</h4>
+                        <ul>
+                            <li><a href="/hakkimizda.html">Hakkımızda</a></li>
+                            <li><a href="/kunye.html">Künye</a></li>
+                            <li><a href="/iletisim.html">İletişim</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>KATEGORİLER</h4>
+                        <ul>
+                            <li><a href="/haberler/gundem/">Gündem</a></li>
+                            <li><a href="/haberler/ekonomi/">Ekonomi</a></li>
+                            <li><a href="/haberler/spor/">Spor</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col social-col">
+                        <h4>SOSYAL MEDYA</h4>
+                        <div class="social-links">
+                            <a href="#" class="social-btn facebook">f</a>
+                            <a href="#" class="social-btn twitter">X</a>
+                            <a href="#" class="social-btn instagram">📷</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 Tüm Hakları Saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Loading screen
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('loading-screen').classList.add('hidden');
+            }, 1500);
+        });
+
+        // Mobile menu
+        document.getElementById('menu-toggle').addEventListener('click', () => {
+            document.getElementById('main-nav').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

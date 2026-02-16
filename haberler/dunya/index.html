@@ -1,1 +1,106 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dünya Haberleri - GündemX</title>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <div id="loading-screen">
+        <div class="loader-container">
+            <div class="loader-x">X</div>
+            <div class="loader-text">LOADING</div>
+            <div class="loader-bar"><div class="loader-progress"></div></div>
+        </div>
+    </div>
+
+    <header class="main-header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-left">
+                    <span class="date" id="current-date"></span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="header-main">
+            <div class="container">
+                <button class="menu-toggle" id="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <a href="../../" class="logo">
+                    <span class="logo-text">Gündem</span>
+                    <span class="logo-dot">X</span>
+                </a>
+            </div>
+        </div>
+        
+        <nav class="main-nav" id="main-nav">
+            <div class="container">
+                <ul class="nav-list">
+                    <li><a href="../../">ANA SAYFA</a></li>
+                    <li><a href="../gundem/index.html">GÜNDEM</a></li>
+                    <li><a href="../ekonomi/index.html">EKONOMİ</a></li>
+                    <li><a href="../spor/index.html">SPOR</a></li>
+                    <li><a href="./" class="active">DÜNYA</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content" style="margin-top: 20px;">
+        <div class="container">
+            <h1 style="color: var(--primary); margin-bottom: 20px; font-size: 28px;">DÜNYA HABERLERİ</h1>
+            
+            <div class="news-grid" id="category-news-grid">
+                <!-- JS ile doldurulacak -->
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 Tüm Hakları Saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const grid = document.getElementById('category-news-grid');
+            if (grid && typeof HABERLER_DB !== 'undefined') {
+                const dunyaHaberler = HABERLER_DB.haberler.filter(h => h.kategoriSlug === 'dunya');
+                
+                grid.innerHTML = '';
+                dunyaHaberler.forEach(haber => {
+                    const card = document.createElement('article');
+                    card.className = 'news-card';
+                    card.style.cursor = 'pointer';
+                    card.innerHTML = `
+                        <div class="news-image">
+                            <img src="${haber.resim}" alt="${haber.baslik}">
+                            <span class="news-category">${haber.kategori}</span>
+                        </div>
+                        <div class="news-content">
+                            <h3 class="news-title">${haber.baslik}</h3>
+                            <div class="news-meta">
+                                <span>📅 ${haber.tarih}</span>
+                                <span>👁️ ${haber.goruntulenme.toLocaleString('tr-TR')}</span>
+                            </div>
+                        </div>
+                    `;
+                    card.onclick = () => window.location.href = haber.url.replace('/haberler/', '');
+                    grid.appendChild(card);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
 

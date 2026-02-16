@@ -7,6 +7,176 @@
     <meta name="description" content="Son dakika haberleri, güncel gelişmeler, ekonomi, spor, dünya ve daha fazlası">
     <link rel="stylesheet" href="css/style.css">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <style>
+        /* CSS'deki düzeltmeler */
+        
+        /* Kategori Butonları Düzeltmesi - Mobil Uyumlu, Taşma Yok */
+        .category-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+            justify-content: flex-start;
+            width: 100%;
+        }
+        
+        .tab-btn {
+            flex: 0 0 auto;
+            padding: 12px 24px;
+            border: 2px solid #e0e0e0;
+            background: white;
+            color: #333;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            font-size: 14px;
+            white-space: nowrap;
+            min-width: fit-content;
+        }
+        
+        .tab-btn:hover {
+            border-color: #0056b3;
+            color: #0056b3;
+        }
+        
+        .tab-btn.active {
+            background: #0056b3;
+            color: white;
+            border-color: #0056b3;
+        }
+        
+        /* Mobil için özel düzenlemeler */
+        @media (max-width: 768px) {
+            .category-tabs {
+                gap: 8px;
+                padding: 0 5px;
+                box-sizing: border-box;
+            }
+            
+            .tab-btn {
+                padding: 10px 18px;
+                font-size: 13px;
+                border-radius: 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .category-tabs {
+                gap: 6px;
+            }
+            
+            .tab-btn {
+                padding: 8px 14px;
+                font-size: 12px;
+            }
+        }
+        
+        /* Footer Yasal Düzenlemeler */
+        .legal-section {
+            background: #1a1a1a;
+            padding: 40px 0 20px;
+            border-top: 3px solid #0056b3;
+        }
+        
+        .legal-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .legal-col h4 {
+            color: #fff;
+            margin-bottom: 15px;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+        
+        .legal-col ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .legal-col ul li {
+            margin-bottom: 8px;
+        }
+        
+        .legal-col ul li a {
+            color: #aaa;
+            text-decoration: none;
+            font-size: 13px;
+            transition: color 0.3s;
+        }
+        
+        .legal-col ul li a:hover {
+            color: #fff;
+        }
+        
+        .publishing-principles {
+            background: #252525;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        
+        .publishing-principles h4 {
+            color: #fff;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        
+        .publishing-principles p {
+            color: #aaa;
+            font-size: 12px;
+            line-height: 1.6;
+            margin: 0;
+        }
+        
+        .legal-bottom {
+            border-top: 1px solid #333;
+            padding-top: 20px;
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .legal-bottom p {
+            color: #666;
+            font-size: 12px;
+            margin: 0;
+        }
+        
+        .legal-links {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .legal-links a {
+            color: #888;
+            text-decoration: none;
+            font-size: 12px;
+        }
+        
+        .legal-links a:hover {
+            color: #fff;
+        }
+        
+        @media (max-width: 768px) {
+            .legal-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .legal-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Loading Screen -->
@@ -153,7 +323,7 @@
                 <!-- Left Column - News -->
                 <div class="news-column">
                     
-                    <!-- Category Tabs -->
+                    <!-- Category Tabs - DÜZELTİLDİ -->
                     <div class="category-tabs">
                         <button class="tab-btn active" data-cat="all">TÜMÜ</button>
                         <button class="tab-btn" data-cat="gundem">GÜNDEM</button>
@@ -211,7 +381,7 @@
         </div>
     </main>
 
-    <!-- Footer -->
+    <!-- Footer - YASAL DÜZENLEMELER EKLENDİ -->
     <footer class="main-footer">
         <div class="footer-top">
             <div class="container">
@@ -260,9 +430,74 @@
                 </div>
             </div>
         </div>
-        <div class="footer-bottom">
+        
+        <!-- YASAL BÖLÜM - YENİ EKLENDİ -->
+        <div class="legal-section">
             <div class="container">
-                <p>&copy; 2026 Tüm Hakları Saklıdır.</p>
+                <div class="legal-grid">
+                    <div class="legal-col">
+                        <h4>Yasal Bilgiler</h4>
+                        <ul>
+                            <li><a href="./aydinlatma-metni.html">Aydınlatma Metni</a></li>
+                            <li><a href="./kisisel-veriler-kanunu.html">Kişisel Verilerin Korunması</a></li>
+                            <li><a href="./cerez-politikasi.html">Çerez Politikası</a></li>
+                            <li><a href="./gizlilik-ilkeleri.html">Gizlilik İlkeleri</a></li>
+                        </ul>
+                    </div>
+                    <div class="legal-col">
+                        <h4>Kullanım Koşulları</h4>
+                        <ul>
+                            <li><a href="./kullanim-kosullari.html">Kullanım Koşulları</a></li>
+                            <li><a href="./uyelik-sozlesmesi.html">Üyelik Sözleşmesi</a></li>
+                            <li><a href="./yayin-ilkeleri.html">Yayın İlkeleri</a></li>
+                            <li><a href="./sikca-sorulan-sorular.html">SSS</a></li>
+                        </ul>
+                    </div>
+                    <div class="legal-col">
+                        <h4>İletişim & Şikayet</h4>
+                        <ul>
+                            <li><a href="./iletisim.html">Bize Ulaşın</a></li>
+                            <li><a href="./sikayet.html">Şikayet Bildir</a></li>
+                            <li><a href="./düzeltme-ve-cevap-hakki.html">Düzeltme ve Cevap Hakkı</a></li>
+                            <li><a href="./yayin-durdurma.html">Yayın Durdurma Talebi</a></li>
+                        </ul>
+                    </div>
+                    <div class="legal-col">
+                        <h4>Kurumsal Bilgiler</h4>
+                        <ul>
+                            <li><a href="./kunye.html">Medya Bilgileri</a></li>
+                            <li><a href="./yayin-akisi.html">Yayın Akışı</a></li>
+                            <li><a href="./reklam.html">Reklam Ver</a></li>
+                            <li><a href="./kariyer.html">Kariyer</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- YAYINCILIK İLKELERİ -->
+                <div class="publishing-principles">
+                    <h4>Yayıncılık İlkelerimiz</h4>
+                    <p>
+                        GündemX olarak habercilik mesleğinin temel ilkelerine bağlı kalmayı ilke edindik. 
+                        Doğruluk, tarafsızlık, adil ve dengeli habercilik anlayışıyla hareket ederiz. 
+                        Kaynaklarımızı açıkça belirtir, haberlerimizde manipülasyona yer vermeyiz. 
+                        Kişilik haklarına saygılıyız; özel hayatın gizliliği ilkesini gözetirken kamu yararı 
+                        gerektiren durumlarda hassasiyetle haber yaparız. Şiddet, ayrımcılık ve nefret söylemine 
+                        karşı dururuz. Düzeltme ve cevap hakkına saygı duyar, hatalarımızı derhal düzeltiriz. 
+                        Reklam ve haber içeriklerini net şekilde ayırır, okuyucularımızı yanıltmaktan kaçınırız. 
+                        Tüm faaliyetlerimizde 5651 sayılı İnternet Ortamında Yapılan Yayınların Düzenlenmesi ve 
+                        Bu Yayınlar Yoluyla İşlenen Suçlarla Mücadele Edilmesi Hakkında Kanun'a uygun hareket ederiz.
+                    </p>
+                </div>
+                
+                <div class="legal-bottom">
+                    <p>&copy; 2026 GündemX. Tüm Hakları Saklıdır. | Bu site Tüketicinin Korunması Hakkında Kanun ve 
+                    Basın İlan Kurumu mevzuatına uygun olarak yayın yapmaktadır.</p>
+                    <div class="legal-links">
+                        <a href="./site-haritasi.html">Site Haritası</a>
+                        <a href="./rss.html">RSS</a>
+                        <a href="./mobil-uygulama.html">Mobil Uygulama</a>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>
@@ -270,5 +505,6 @@
     <script src="js/main.js"></script>
 </body>
 </html>
+
 
 

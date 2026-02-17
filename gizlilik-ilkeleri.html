@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gizlilik İlkeleri - GündemX</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .legal-content {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .legal-content h1 {
+            color: var(--primary);
+            font-size: 28px;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--primary);
+        }
+        .legal-content h2 {
+            color: #333;
+            font-size: 20px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        .legal-content p, .legal-content li {
+            color: #444;
+            line-height: 1.8;
+            margin-bottom: 15px;
+            font-size: 15px;
+        }
+        .principle-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .principle-card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .commitment-box {
+            background: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="loading-screen">
+        <div class="loader-container">
+            <div class="loader-x">X</div>
+            <div class="loader-text">LOADING</div>
+            <div class="loader-bar"><div class="loader-progress"></div></div>
+        </div>
+    </div>
+
+    <header class="main-header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-left">
+                    <span class="date" id="current-date"></span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="header-main">
+            <div class="container">
+                <button class="menu-toggle" id="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <a href="./" class="logo">
+                    <span class="logo-text">Gündem</span>
+                    <span class="logo-dot">X</span>
+                </a>
+            </div>
+        </div>
+        
+        <nav class="main-nav" id="main-nav">
+            <div class="container">
+                <ul class="nav-list">
+                    <li><a href="./">ANA SAYFA</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content" style="margin-top: 20px; padding-bottom: 60px;">
+        <div class="container">
+            <div class="legal-content">
+                <h1>GİZLİLİK İLKELERİ</h1>
+                
+                <div class="commitment-box">
+                    <p><strong>Taahhüdümüz:</strong> GündemX olarak kullanıcılarımızın gizliliğini en üst düzeyde koruma taahhüdündeyiz. Bu ilkeler, habercilik etiği ve veri koruma standartlarımızın temelini oluşturur.</p>
+                </div>
+                
+                <h2>1. EDİTORYAL BAĞIMSIZLIK VE GİZLİLİK</h2>
+                <div class="principle-card">
+                    <h3>Kaynak Koruma İlkesi</h3>
+                    <p>Haber kaynaklarımızın kimliği editoryal süreçlerde en üst düzeyde korunur. Gazetecilik faaliyetleri kapsamında edinilen bilgiler, yasal zorunluluk olmadıkça üçüncü taraflarla paylaşılmaz.</p>
+                </div>
+                
+                <h2>2. KULLANICI GİZLİLİĞİ</h2>
+                <ul>
+                    <li><strong>Anonimlik:</strong> Yorum yaparken kullanıcılarımızın kimliği gizli tutulur (yasal talepler hariç)</li>
+                    <li><strong>İletişim Güvenliği:</strong> İhbar ve şikayetlerde iletişim bilgileri şifrelenerek saklanır</li>
+                    <li><strong>Veri Minimizasyonu:</strong> Sadece gerekli veriler toplanır, gereksiz veri biriktirilmez</li>
+                    <li><strong>Şeffaflık:</strong> Hangi verilerin neden toplandığı açıkça belirtilir</li>
+                </ul>
+                
+                <h2>3. HABER İÇERİĞİNDE GİZLİLİK</h2>
+                <p>Haberlerimizde:</p>
+                <ul>
+                    <li>Özel hayatın gizliliği ilkesine saygı gösterilir</li>
+                    <li>Kamu yararı bulunmayan özel bilgiler yayınlanmaz</li>
+                    <li>Mağdur ve tanık kimlikleri korunur (özellikle cinsel suç, çocuk suçları vb.)</li>
+                    <li>İfade özgürlüğü ile kişilik hakları dengeli şekilde korunur</li>
+                </ul>
+                
+                <h2>4. TEKNİK GÜVENLİK İLKELERİ</h2>
+                <ul>
+                    <li>SSL/TLS şifrelemesi ile veri iletimi</li>
+                    <li>Düzenli güvenlik denetimleri</li>
+                    <li>Veri ihlali durumunda 72 saat içinde yetkili kurumlara bildirim</li>
+                    <li>Çalışanlarımız için gizlilik sözleşmeleri</li>
+                </ul>
+                
+                <h2>5. ÜÇÜNCÜ TARAF İLİŞKİLERİ</h2>
+                <p>Reklam verenler ve iş ortaklarımız:</p>
+                <ul>
+                    <li>Kullanıcı verilerine doğrudan erişemez</li>
+                    <li>Sadece anonimleştirilmiş istatistikler paylaşılır</li>
+                    <li>Veri işleme sözleşmeleri ile koruma altındadır</li>
+                </ul>
+                
+                <h2>6. HAKLARINIZ</h2>
+                <p>Kullanıcılarımız olarak sahip olduğunuz haklar:</p>
+                <ul>
+                    <li>Verilerinize erişim hakkı</li>
+                    <li>Düzeltme ve silme talebi</li>
+                    <li>İşlemeye itiraz hakkı</li>
+                    <li>Veri taşınabilirliği hakkı</li>
+                    <li>Şikayet hakkı (KVKK'ya)</li>
+                </ul>
+                
+                <h2>7. İLETİŞİM</h2>
+                <p>Gizlilik konularında:</p>
+                <p>📧 <strong>E-posta:</strong> yamanmedya00@gmail.com</p>
+                <p>📮 <strong>Adres:</strong> [Şirket Adresi]</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 GündemX. Tüm Hakları Saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

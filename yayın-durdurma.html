@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yayın Durdurma Talebi - GündemX</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .legal-content {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .legal-content h1 {
+            color: var(--primary);
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        .emergency-box {
+            background: #ffebee;
+            border: 2px solid #f44336;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        .emergency-box h2 {
+            color: #c62828;
+            margin-bottom: 15px;
+        }
+        .grounds-list {
+            background: #f3e5f5;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 25px 0;
+        }
+        .grounds-list h3 {
+            color: #6a1b9a;
+            margin-bottom: 15px;
+        }
+        .form-container {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            color: #333;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+        }
+        .form-group textarea {
+            min-height: 120px;
+        }
+        .urgent-checkbox {
+            background: #fff3cd;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .submit-btn {
+            background: #d32f2f;
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+        }
+        .submit-btn:hover {
+            background: #b71c1c;
+        }
+        .timeline-urgent {
+            background: #e8f5e9;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div id="loading-screen">
+        <div class="loader-container">
+            <div class="loader-x">X</div>
+            <div class="loader-text">LOADING</div>
+            <div class="loader-bar"><div class="loader-progress"></div></div>
+        </div>
+    </div>
+
+    <header class="main-header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-left">
+                    <span class="date" id="current-date"></span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="header-main">
+            <div class="container">
+                <button class="menu-toggle" id="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <a href="./" class="logo">
+                    <span class="logo-text">Gündem</span>
+                    <span class="logo-dot">X</span>
+                </a>
+            </div>
+        </div>
+        
+        <nav class="main-nav" id="main-nav">
+            <div class="container">
+                <ul class="nav-list">
+                    <li><a href="./">ANA SAYFA</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content" style="margin-top: 20px; padding-bottom: 60px;">
+        <div class="container">
+            <div class="legal-content">
+                <h1>YAYIN DURDURMA TALEBİ</h1>
+                
+                <div class="emergency-box">
+                    <h2>⚠️ ACİL DURUM TALEBİ</h2>
+                    <p>Bu form, <strong>can güvenliği tehdidi</strong>, <strong>mahkeme kararı</strong> veya <strong>acil durumlar</strong> için kullanılır. Diğer şikayetler için lütfen <a href="./sikayet.html">Şikayet Bildir</a> sayfasını kullanın.</p>
+                </div>
+                
+                <h2>HUKUKİ DAYANAK</h2>
+                <p>5651 sayılı İnternet Ortamında Yapılan Yayınların Düzenlenmesi ve Bu Yayınlar Yoluyla İşlenen Suçlarla Mücadele Edilmesi Hakkında Kanun'un 9. maddesi uyarınca:</p>
+                
+                <div class="grounds-list">
+                    <h3>Geçerli Talep Nedenleri</h3>
+                    <ul>
+                        <li>📌 <strong>Kişilik haklarının ihlali</strong> (özel hayat, şeref ve haysiyet)</li>
+                        <li>📌 <strong>Mahkeme kararı</strong> (yayın yasağı veya içeriğin kaldırılması)</li>
+                        <li>📌 <strong>Telif hakkı ihlali</strong> (açık ve somut durumlar)</li>
+                        <li>📌 <strong>Çocukların korunması</strong> (istismar içeriği vb.)</li>
+                        <li>📌 <strong>Can güvenliği tehdidi</strong> (adres, konum paylaşımı vb.)</li>
+                    </ul>
+                </div>
+                
+                <h2>İNCELEME SÜRECİ</h2>
+                <div class="timeline-urgent">
+                    <p><strong>Acil Talepler (Can güvenliği):</strong> 24 saat içinde</p>
+                    <p><strong>Mahkeme Kararı:</strong> 4 saat içinde</p>
+                    <p><strong>Diğer Talepler:</strong> 48 saat içinde</p>
+                </div>
+                
+                <div class="form-container">
+                    <h3>🚨 Acil Yayın Durdurma Formu</h3>
+                    <form onsubmit="return handleSubmit(event)">
+                        <div class="form-group">
+                            <label>Talep Türü *</label>
+                            <select required>
+                                <option value="">Seçiniz</option>
+                                <option value="life_threat">Can Güvenliği Tehdidi</option>
+                                <option value="court_order">Mahkeme Kararı</option>
+                                <option value="copyright">Telif Hakkı İhlali</option>
+                                <option value="child_protection">Çocuk Koruma</option>
+                                <option value="privacy">Özel Hayat İhlali</option>
+                                <option value="other">Diğer (Açıklayın)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Ad Soyad *</label>
+                            <input type="text" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>E-posta *</label>
+                            <input type="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Telefon *</label>
+                            <input type="tel" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Haber URL'si *</label>
+                            <input type="url" placeholder="https://gundemx.online/haber/..." required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Talep Gerekçesi (Detaylı) *</label>
+                            <textarea placeholder="Neden acil durdurma talep ediyorsunuz? Somut gerekçeleri belirtin..." required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Mahkeme Kararı / Belge (varsa)</label>
+                            <input type="file" accept=".pdf,.jpg,.jpeg,.png">
+                        </div>
+                        
+                        <div class="urgent-checkbox">
+                            <label style="display: flex; align-items: flex-start; gap: 10px; font-weight: normal; cursor: pointer;">
+                                <input type="checkbox" required style="margin-top: 5px;">
+                                <span>Bu talebin <strong>acil</strong> olduğunu, verdiğim bilgilerin doğru olduğunu ve yanlış beyan durumunda hukuki sorumluluğu kabul ettiğimi beyan ederim. *</span>
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">ACİL TALEBİ GÖNDER</button>
+                    </form>
+                </div>
+                
+                <div style="margin-top: 30px; padding: 20px; background: #e3f2fd; border-radius: 8px;">
+                    <h3>📞 Acil İletişim</h3>
+                    <p>Çok acil durumlar için doğrudan arayın:</p>
+                    <p><strong>📱 İhbar Hattı:</strong> 0543 329 88 27 (7/24)</p>
+                    <p><strong>📧 E-posta:</strong> yamanmedya00@gmail.com</p>
+                </div>
+                
+                <div style="margin-top: 30px; font-size: 14px; color: #666;">
+                    <h3>⚖️ Yasal Uyarı</h3>
+                    <p>Sahte veya kötü niyetli taleplerde bulunanlar hakkında yasal işlem başlatılır. 5651 sayılı Kanun'un 13. maddesi uyarınca gerçeğe aykırı bildirimde bulunanlar hakkında cezai işlem uygulanabilir.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 GündemX. Tüm Hakları Saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        function handleSubmit(e) {
+            e.preventDefault();
+            alert('Acil talebiniz alındı! Editörlerimiz en kısa sürede size dönüş yapacaktır.\n\nTalep Numaranız: YD' + Date.now());
+            return false;
+        }
+    </script>
+</body>
+</html>

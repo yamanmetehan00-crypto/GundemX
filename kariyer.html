@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kariyer - GündemX</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .career-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .career-container h1 {
+            color: var(--primary);
+            font-size: 32px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .values-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+        .value-card {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .value-card:hover {
+            transform: translateY(-5px);
+        }
+        .value-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+        .value-card h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        .job-list {
+            margin-top: 40px;
+        }
+        .job-item {
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 20px;
+            transition: all 0.3s;
+        }
+        .job-item:hover {
+            border-color: var(--primary);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .job-title {
+            color: var(--primary);
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+        .job-meta {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            color: #666;
+            font-size: 14px;
+        }
+        .job-tag {
+            display: inline-block;
+            padding: 4px 12px;
+            background: #e3f2fd;
+            color: var(--primary);
+            border-radius: 15px;
+            font-size: 12px;
+        }
+        .apply-btn {
+            display: inline-block;
+            padding: 10px 25px;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            margin-top: 15px;
+            transition: background 0.3s;
+        }
+        .apply-btn:hover {
+            background: #004494;
+        }
+        .benefits {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 10px;
+            margin-top: 40px;
+        }
+        .benefits h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .internship-box {
+            background: #e8f5e9;
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="loading-screen">
+        <div class="loader-container">
+            <div class="loader-x">X</div>
+            <div class="loader-text">LOADING</div>
+            <div class="loader-bar"><div class="loader-progress"></div></div>
+        </div>
+    </div>
+
+    <header class="main-header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-left">
+                    <span class="date" id="current-date"></span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="header-main">
+            <div class="container">
+                <button class="menu-toggle" id="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <a href="./" class="logo">
+                    <span class="logo-text">Gündem</span>
+                    <span class="logo-dot">X</span>
+                </a>
+            </div>
+        </div>
+        
+        <nav class="main-nav" id="main-nav">
+            <div class="container">
+                <ul class="nav-list">
+                    <li><a href="./">ANA SAYFA</a></li>
+                    <li><a href="./kariyer.html" class="active">KARİYER</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content" style="margin-top: 20px; padding-bottom: 60px;">
+        <div class="container">
+            <div class="career-container">
+                <h1>KARİYER</h1>
+                <p style="text-align: center; color: #666;">Türkiye'nin en hızlı büyüyen haber platformunda yerinizi alın</p>
+                
+                <div class="values-section">
+                    <div class="value-card">
+                        <div class="value-icon">🎯</div>
+                        <h3>Doğruluk</h3>
+                        <p>Doğru habercilik ilkeleriyle çalışırız</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">⚡</div>
+                        <h3>Hız</h3>
+                        <p>Anlık gelişmeleri anında aktarırız</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">🤝</div>
+                        <h3>Takım</h3>
+                        <p>Birlikte büyüyen bir aileyiz</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">💡</div>
+                        <h3>Yenilik</h3>
+                        <p>Sürekli kendimizi geliştiririz</p>
+                    </div>
+                </div>
+                
+                <h2 style="color: #333; margin-bottom: 20px;">Açık Pozisyonlar</h2>
+                
+                <div class="job-list">
+                    <div class="job-item">
+                        <div class="job-header">
+                            <div>
+                                <h3 class="job-title">Kıdemli Editör</h3>
+                                <div class="job-meta">
+                                    <span>📍 İstanbul</span>
+                                    <span>💼 Tam Zamanlı</span>
+                                    <span>📅 Son Başvuru: 01.03.2026</span>
+                                </div>
+                            </div>
+                            <span class="job-tag">Editoryal</span>
+                        </div>
+                        <p>Gündem masasından sorumlu, en az 5 yıl deneyimli kıdemli editör arıyoruz.</p>
+                        <a href="mailto:yamanmedya00@gmail.com?subject=Kıdemli Editör Başvurusu" class="apply-btn">Başvur</a>
+                    </div>
+                    
+                    <div class="job-item">
+                        <div class="job-header">
+                            <div>
+                                <h3 class="job-title">Muhabir</h3>
+                                <div class="job-meta">
+                                    <span>📍 Ankara</span>
+                                    <span>💼 Tam Zamanlı</span>
+                                    <span>📅 Son Başvuru: 28.02.2026</span>
+                                </div>
+                            </div>
+                            <span class="job-tag">Muhabirlik</span>
+                        </div>
+                        <p>Ankara temsilciliğimizde görev alacak, siyaset ve ekonomi alanında muhabir.</p>
+                        <a href="mailto:yamanmedya00@gmail.com?subject=Muhabir Başvurusu" class="apply-btn">Başvur</a>
+                    </div>
+                    
+                    <div class="job-item">
+                        <div class="job-header">
+                            <div>
+                                <h3 class="job-title">Sosyal Medya Uzmanı</h3>
+                                <div class="job-meta">
+                                    <span>📍 İstanbul</span>
+                                    <span>💼 Tam Zamanlı</span>
+                                    <span>📅 Son Başvuru: 20.02.2026</span>
+                                </div>
+                            </div>
+                            <span class="job-tag">Dijital</span>
+                        </div>
+                        <p>Sosyal medya stratejilerinin yönetimi ve içerik üretimi.</p>
+                        <a href="mailto:yamanmedya00@gmail.com?subject=Sosyal Medya Uzmanı Başvurusu" class="apply-btn">Başvur</a>
+                    </div>
+                    
+                    <div class="job-item">
+                        <div class="job-header">
+                            <div>
+                                <h3 class="job-title">Yazılım Geliştirici</h3>
+                                <div class="job-meta">
+                                    <span>📍 Uzaktan / İstanbul</span>
+                                    <span>💼 Tam Zamanlı</span>
+                                    <span>📅 Son Başvuru: Sürekli</span>
+                                </div>
+                            </div>
+                            <span class="job-tag">Teknoloji</span>
+                        </div>
+                        <p>Web ve mobil uygulama geliştirme ekibimize katılacak full-stack developer.</p>
+                        <a href="mailto:yamanmedya00@gmail.com?subject=Yazılım Geliştirici Başvurusu" class="apply-btn">Başvur</a>
+                    </div>
+                </div>
+                
+                <div class="benefits">
+                    <h2>Çalışanlarımıza Sunduklarımız</h2>
+                    <div class="benefits-grid">
+                        <div class="benefit-item">✓ Rekabetçi maaş</div>
+                        <div class="benefit-item">✓ Özel sağlık sigortası</div>
+                        <div class="benefit-item">✓ Yemek kartı</div>
+                        <div class="benefit-item">✓ Ulaşım desteği</div>
+                        <div class="benefit-item">✓ Eğitim bütçesi</div>
+                        <div class="benefit-item">✓ Esnek çalışma</div>
+                        <div class="benefit-item">✓ Performans primi</div>
+                        <div class="benefit-item">✓ Doğum günü izni</div>
+                    </div>
+                </div>
+                
+                <div class="internship-box">
+                    <h3 style="margin-bottom: 15px;">🎓 Staj Programı</h3>
+                    <p style="margin-bottom: 15px;">Üniversite öğrencilerine yönelik staj programımız hakkında bilgi almak için bize ulaşın.</p>
+                    <a href="mailto:yamanmedya00@gmail.com?subject=Staj Başvurusu" style="display: inline-block; padding: 12px 30px; background: var(--primary); color: white; text-decoration: none; border-radius: 25px; font-weight: 600;">Staj Başvurusu Yap</a>
+                </div>
+                
+                <div style="margin-top: 30px; text-align: center;">
+                    <p style="color: #666;">Açık pozisyonlara uymuyor ama ekibimize katılmak istiyorsanız?</p>
+                    <p style="margin-top: 10px; font-size: 18px; color: var(--primary); font-weight: 600;">yamanmedya00@gmail.com</p>
+                    <p style="color: #666; margin-top: 5px;">CV'nizi gönderin, size dönelim</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 GündemX. Tüm Hakları Saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

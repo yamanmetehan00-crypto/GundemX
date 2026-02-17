@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Çerez Politikası - GündemX</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .legal-content {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .legal-content h1 {
+            color: var(--primary);
+            font-size: 28px;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--primary);
+        }
+        .legal-content h2 {
+            color: #333;
+            font-size: 20px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        .legal-content p, .legal-content li {
+            color: #444;
+            line-height: 1.8;
+            margin-bottom: 15px;
+            font-size: 15px;
+        }
+        .legal-content ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        .cookie-type {
+            background: #f8f9fa;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+        }
+        .cookie-type h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        .toggle-switch {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px;
+            background: #f0f0f0;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+        .manage-btn {
+            background: var(--primary);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="loading-screen">
+        <div class="loader-container">
+            <div class="loader-x">X</div>
+            <div class="loader-text">LOADING</div>
+            <div class="loader-bar"><div class="loader-progress"></div></div>
+        </div>
+    </div>
+
+    <header class="main-header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-left">
+                    <span class="date" id="current-date"></span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="header-main">
+            <div class="container">
+                <button class="menu-toggle" id="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <a href="./" class="logo">
+                    <span class="logo-text">Gündem</span>
+                    <span class="logo-dot">X</span>
+                </a>
+            </div>
+        </div>
+        
+        <nav class="main-nav" id="main-nav">
+            <div class="container">
+                <ul class="nav-list">
+                    <li><a href="./">ANA SAYFA</a></li>
+                    <li><a href="./haberler/gundem/index.html">GÜNDEM</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content" style="margin-top: 20px; padding-bottom: 60px;">
+        <div class="container">
+            <div class="legal-content">
+                <h1>ÇEREZ POLİTİKASI</h1>
+                
+                <p>Son Güncelleme: 16 Şubat 2026</p>
+                
+                <p>Bu Çerez Politikası, GündemX web sitesi ve mobil uygulamalarında çerezlerin ve benzer izleme teknolojilerinin nasıl kullanıldığını açıklamaktadır.</p>
+                
+                <h2>1. ÇEREZ NEDİR?</h2>
+                <p>Çerezler, web sitemizi ziyaret ettiğinizde tarayıcınız aracılığıyla cihazınıza kaydedilen küçük metin dosyalarıdır. Çerezler, siteyi kullanımınızı kolaylaştırmak, site güvenliğini sağlamak ve size kişiselleştirilmiş içerik sunmak amacıyla kullanılır.</p>
+                
+                <h2>2. KULLANDIĞIMIZ ÇEREZ TÜRLERİ</h2>
+                
+                <div class="cookie-type">
+                    <h3>🟢 Zorunlu Çerezler (Teknik Çerezler)</h3>
+                    <p><strong>Durum:</strong> Kapatılamaz - Her zaman aktif</p>
+                    <p>Web sitemizin düzgün çalışması için gereklidir. Güvenlik, oturum yönetimi ve altyapı sağlar.</p>
+                    <ul>
+                        <li>Oturum çerezleri (Session ID)</li>
+                        <li>Güvenlik tokenleri (CSRF koruması)</li>
+                        <li>Yük dengeleme çerezleri</li>
+                    </ul>
+                    <p><strong>Saklama Süresi:</strong> Oturum süresi veya 1 yıl</p>
+                </div>
+                
+                <div class="cookie-type">
+                    <h3>🔵 Analitik Çerezler (Performans Çerezleri)</h3>
+                    <p><strong>Durum:</strong> İsteğe bağlı - Onayınıza tabi</p>
+                    <p>Ziyaretçi sayısı, trafik kaynakları ve sayfa etkileşimlerini analiz ederek sitemizi geliştirmemize yardımcı olur.</p>
+                    <ul>
+                        <li>Google Analytics</li>
+                        <li>Hotjar (kullanıcı davranış analizi)</li>
+                        <li>Yandex Metrica</li>
+                    </ul>
+                    <p><strong>Saklama Süresi:</strong> 2 yıl</p>
+                </div>
+                
+                <div class="cookie-type">
+                    <h3>🟡 İşlevsellik Çerezleri</h3>
+                    <p><strong>Durum:</strong> İsteğe bağlı - Onayınıza tabi</p>
+                    <p>Tercihlerinizi hatırlayarak kişiselleştirilmiş deneyim sunar.</p>
+                    <ul>
+                        <li>Dil tercihi</li>
+                        <li>Bölge/şehir seçimi</li>
+                        <li>Metin boyutu tercihi</li>
+                        <li>Giriş bilgileri (hatırla seçeneği)</li>
+                    </ul>
+                    <p><strong>Saklama Süresi:</strong> 1 yıl</p>
+                </div>
+                
+                <div class="cookie-type">
+                    <h3>🟠 Hedefleme/Reklam Çerezleri</h3>
+                    <p><strong>Durum:</strong> İsteğe bağlı - Açık rıza gerektirir</p>
+                    <p>İlgi alanlarınıza uygun reklamlar göstermek ve kampanya etkinliğini ölçmek için kullanılır.</p>
+                    <ul>
+                        <li>Google AdSense/AdManager</li>
+                        <li>Facebook Pixel</li>
+                        <li>Programatik reklam ağları</li>
+                    </ul>
+                    <p><strong>Saklama Süresi:</strong> 1-2 yıl</p>
+                </div>
+                
+                <div class="cookie-type">
+                    <h3>🔴 Sosyal Medya Çerezleri</h3>
+                    <p><strong>Durum:</strong> İsteğe bağlı - Onayınıza tabi</p>
+                    <p>Sosyal medya entegrasyonu ve paylaşım butonları için kullanılır.</p>
+                    <ul>
+                        <li>Facebook Connect</li>
+                        <li>Twitter Button</li>
+                        <li>LinkedIn Insight Tag</li>
+                    </ul>
+                    <p><strong>Saklama Süresi:</strong> 2 yıl</p>
+                </div>
+                
+                <h2>3. ÇEREZ YÖNETİMİ</h2>
+                <p>Tarayıcınızın ayarlarından çerezleri yönetebilirsiniz:</p>
+                
+                <h3>Tarayıcı Bazlı Çerez Silme:</h3>
+                <ul>
+                    <li><strong>Chrome:</strong> Ayarlar > Gizlilik ve Güvenlik > Çerezler ve diğer site verileri</li>
+                    <li><strong>Firefox:</strong> Ayarlar > Gizlilik ve Güvenlik > Çerezler ve Site Verileri</li>
+                    <li><strong>Safari:</strong> Tercihler > Gizlilik > Çerezler ve web sitesi verileri</li>
+                    <li><strong>Edge:</strong> Ayarlar > Çerezler ve site izinleri</li>
+                </ul>
+                
+                <h2>4. ÜÇÜNCÜ TARAF ÇEREZLERİ</h2>
+                <p>Web sitemizde aşağıdaki üçüncü taraf hizmetler çerez kullanmaktadır:</p>
+                <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                    <tr style="background: var(--primary); color: white;">
+                        <th style="padding: 12px; text-align: left; border: 1px solid #ddd;">Hizmet Sağlayıcı</th>
+                        <th style="padding: 12px; text-align: left; border: 1px solid #ddd;">Amaç</th>
+                        <th style="padding: 12px; text-align: left; border: 1px solid #ddd;">Gizlilik Politikası</th>
+                    </tr>
+                    <tr>
+                        <td style="padding: 12px; border: 1px solid #ddd;">Google</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">Analiz, Reklam</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;"><a href="https://policies.google.com/privacy" target="_blank">Google Privacy</a></td>
+                    </tr>
+                    <tr style="background: #f9f9f9;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">Facebook</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">Sosyal medya, Reklam</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;"><a href="https://www.facebook.com/policy.php" target="_blank">Facebook Policy</a></td>
+                    </tr>
+                </table>
+                
+                <h2>5. ÇEREZLERİN YASAL DAYANAĞI</h2>
+                <p>Çerez kullanımımız aşağıdaki mevzuata dayanmaktadır:</p>
+                <ul>
+                    <li>6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK)</li>
+                    <li>Elektronik Ticaretin Düzenlenmesi Hakkında Kanun</li>
+                    <li>Ticari İletişim ve Ticari Elektronik İletiler Hakkında Yönetmelik</li>
+                    <li>AB Genel Veri Koruma Tüzüğü (GDPR) - ilgili bölümler</li>
+                </ul>
+                
+                <h2>6. İLETİŞİM</h2>
+                <p>Çerezler hakkında sorularınız için:</p>
+                <p>📧 <strong>E-posta:</strong> yamanmedya00@gmail.com</p>
+                
+                <h2>7. POLİTİKA DEĞİŞİKLİKLERİ</h2>
+                <p>Bu politika yasal düzenlemeler ve teknolojik gelişmelere bağlı olarak güncellenebilir. Değişiklikler web sitemizde yayınlanır ve önemli değişikliklerde bildirim yapılır.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 GündemX. Tüm Hakları Saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

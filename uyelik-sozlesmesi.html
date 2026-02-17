@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Üyelik Sözleşmesi - GündemX</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .legal-content {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .legal-content h1 {
+            color: var(--primary);
+            font-size: 28px;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--primary);
+        }
+        .legal-content h2 {
+            color: #333;
+            font-size: 20px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        .legal-content p, .legal-content li {
+            color: #444;
+            line-height: 1.8;
+            margin-bottom: 15px;
+            font-size: 15px;
+        }
+        .contract-box {
+            background: #f8f9fa;
+            border: 2px solid var(--primary);
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+        .parties {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 30px 0;
+        }
+        .party-box {
+            background: #e3f2fd;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        @media (max-width: 768px) {
+            .parties {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="loading-screen">
+        <div class="loader-container">
+            <div class="loader-x">X</div>
+            <div class="loader-text">LOADING</div>
+            <div class="loader-bar"><div class="loader-progress"></div></div>
+        </div>
+    </div>
+
+    <header class="main-header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-left">
+                    <span class="date" id="current-date"></span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="header-main">
+            <div class="container">
+                <button class="menu-toggle" id="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <a href="./" class="logo">
+                    <span class="logo-text">Gündem</span>
+                    <span class="logo-dot">X</span>
+                </a>
+            </div>
+        </div>
+        
+        <nav class="main-nav" id="main-nav">
+            <div class="container">
+                <ul class="nav-list">
+                    <li><a href="./">ANA SAYFA</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content" style="margin-top: 20px; padding-bottom: 60px;">
+        <div class="container">
+            <div class="legal-content">
+                <h1>ÜYELİK SÖZLEŞMESİ</h1>
+                
+                <div class="contract-box">
+                    <p style="text-align: center; font-weight: bold; margin-bottom: 0;">Elektronik Ticaretin Düzenlenmesi Hakkında Kanun ve 6098 sayılı Türk Borçlar Kanunu kapsamında düzenlenmiştir.</p>
+                </div>
+                
+                <div class="parties">
+                    <div class="party-box">
+                        <h3>1. TARAF (HİZMET SAĞLAYICI)</h3>
+                        <p><strong>Ünvan:</strong> Yaman Medya A.Ş.</p>
+                        <p><strong>Ticaret Sicil No:</strong> [Sicil No]</p>
+                        <p><strong>Mersis No:</strong> [Mersis No]</p>
+                        <p><strong>Adres:</strong> [Merkez Adres]</p>
+                        <p><strong>E-posta:</strong> yamanmedya00@gmail.com</p>
+                        <p><strong>Telefon:</strong> [İletişim]</p>
+                    </div>
+                    <div class="party-box">
+                        <h3>2. TARAF (ÜYE)</h3>
+                        <p>Web sitesine üye olan ve bu sözleşmeyi kabul eden gerçek kişi.</p>
+                        <p>Üyelik işlemi sırasında verilen bilgiler esastır.</p>
+                    </div>
+                </div>
+                
+                <h2>MADDE 1 - SÖZLEŞMENİN KONUSU</h2>
+                <p>İş bu sözleşme, Üye'nin GündemX web sitesinden yararlanmasına ilişkin koşulları ve tarafların hak ve yükümlülüklerini düzenler.</p>
+                
+                <h2>MADDE 2 - ÜYELİK TÜRLERİ</h2>
+                <p><strong>2.1. Standart Üyelik:</strong> Ücretsiz temel üyelik. Haber okuma, yorum yapma, bülten alma imkanı.</p>
+                <p><strong>2.2. Premium Üyelik:</strong> Ücretli üyelik (varsa). Reklamsız deneyim, özel içerikler, arşiv erişimi.</p>
+                
+                <h2>MADDE 3 - ÜYELİK BAŞVURUSU VE KABULÜ</h2>
+                <p>3.1. Üyelik başvurusu, site üzerinden elektronik form doldurulması suretiyle yapılır.</p>
+                <p>3.2. Başvuru, Şirket tarafından değerlendirilir ve uygun görülmesi halinde onaylanır.</p>
+                <p>3.3. 18 yaşını doldurmamış kişiler veli/vasi izni olmadan üye olamaz.</p>
+                
+                <h2>MADDE 4 - ÜYE'NİN HAKLARI</h2>
+                <ul>
+                    <li>Site içeriğine erişim hakkı</li>
+                    <li>Yorum yapma ve paylaşımda bulunma hakkı</li>
+                    <li>Haber bülteni alma hakkı</li>
+                    <li>Hesap ayarlarını yönetme hakkı</li>
+                    <li>Üyeliği sonlandırma hakkı</li>
+                </ul>
+                
+                <h2>MADDE 5 - ÜYE'NİN YÜKÜMLÜLÜKLERİ</h2>
+                <p>5.1. Doğru ve güncel bilgi verme</p>
+                <p>5.2. Hesap bilgilerinin gizliliğini koruma</p>
+                <p>5.3. Başka kişinin kimlik bilgilerini kullanmama</p>
+                <p>5.4. Site kurallarına ve yasalara uyma</p>
+                <p>5.5. Yorumlarda hakaret, spam, yasadışı içerik paylaşmama</p>
+                
+                <h2>MADDE 6 - ŞİRKET'İN HAKLARI</h2>
+                <ul>
+                    <li>Üyelik başvurusunu reddetme hakkı</li>
+                    <li>Kurallara uymayan üyeyi uyarma veya üyeliği askıya alma hakkı</li>
+                    <li>Site içeriğini ve hizmetlerini değiştirme hakkı</li>
+                    <li>Bakım ve güncelleme için geçici erişim kısıtlaması hakkı</li>
+                </ul>
+                
+                <h2>MADDE 7 - GİZLİLİK VE VERİ KORUMA</h2>
+                <p>Kişisel verileriniz 6698 sayılı KVKK kapsamında işlenir. Detaylı bilgi için <a href="./aydinlatma-metni.html">Aydınlatma Metni</a>'ni inceleyiniz.</p>
+                
+                <h2>MADDE 8 - FİKRİ HAKLAR</h2>
+                <p>Site içeriği ve yazılımı Şirket'in mülkiyetindedir. Üye, bu içerikleri izinsiz kullanamaz.</p>
+                
+                <h2>MADDE 9 - SÖZLEŞME SÜRESİ VE SONA ERMESİ</h2>
+                <p>9.1. Bu sözleşme, üyelik başlangıç tarihinden itibaren süresiz olarak yürürlüktedir.</p>
+                <p>9.2. Taraflardan biri istediği zaman üyeliği sonlandırabilir.</p>
+                <p>9.3. Kural ihlali durumunda Şirket tek taraflı fesih hakkına sahiptir.</p>
+                
+                <h2>MADDE 10 - UYUŞMAZLIK ÇÖZÜMÜ</h2>
+                <p>Bu sözleşmeden doğan uyuşmazlıklarda öncelikle sulh yolu denenir. Anlaşmazlık durumunda İstanbul Mahkemeleri ve İcra Daireleri yetkilidir.</p>
+                
+                <h2>MADDE 11 - YÜRÜRLÜK</h2>
+                <p>İş bu sözleşme, elektronik ortamda onaylanmasıyla yürürlüğe girer.</p>
+                
+                <div class="contract-box" style="margin-top: 40px;">
+                    <p style="margin-bottom: 0;"><strong>Onay:</strong> Üye, üyelik formunu doldurup "Üye Ol" butonuna tıklayarak bu sözleşmeyi okuduğunu, anladığını ve kabul ettiğini beyan eder.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 GündemX. Tüm Hakları Saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yazarlarımız - GündemX</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .authors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .author-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .author-card:hover {
+            transform: translateY(-5px);
+        }
+        .author-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .author-info {
+            padding: 20px;
+        }
+        .author-name {
+            font-size: 20px;
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+        .author-title {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        .author-bio {
+            color: #444;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        .author-stats {
+            display: flex;
+            gap: 20px;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+            font-size: 13px;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div id="loading-screen">
+        <div class="loader-container">
+            <div class="loader-x">X</div>
+            <div class="loader-text">LOADING</div>
+            <div class="loader-bar"><div class="loader-progress"></div></div>
+        </div>
+    </div>
+
+    <header class="main-header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-left">
+                    <span class="date" id="current-date"></span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="header-main">
+            <div class="container">
+                <button class="menu-toggle" id="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <a href="./" class="logo">
+                    <span class="logo-text">Gündem</span>
+                    <span class="logo-dot">X</span>
+                </a>
+            </div>
+        </div>
+        
+        <nav class="main-nav" id="main-nav">
+            <div class="container">
+                <ul class="nav-list">
+                    <li><a href="./">ANA SAYFA</a></li>
+                    <li><a href="./haberler/gundem/index.html">GÜNDEM</a></li>
+                    <li><a href="./haberler/ekonomi/index.html">EKONOMİ</a></li>
+                    <li><a href="./haberler/spor/index.html">SPOR</a></li>
+                    <li><a href="./haberler/dunya/index.html">DÜNYA</a></li>
+                    <li><a href="./yazarlar.html" class="active">YAZARLAR</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content" style="margin-top: 20px;">
+        <div class="container">
+            <h1 style="color: var(--primary); margin-bottom: 10px; font-size: 32px;">YAZARLARIMIZ</h1>
+            <p style="color: #666; margin-bottom: 30px;">GündemX'in deneyimli yazar kadrosu ile tanışın</p>
+            
+            <div class="authors-grid" id="authors-grid">
+                <!-- JS ile doldurulacak -->
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 GündemX. Tüm Hakları Saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        const yazarlar = [
+            {
+                ad: "Ahmet Yılmaz",
+                unvan: "Siyasi Yorumcu",
+                biyografi: "20 yıllık gazetecilik deneyimi. Ankara Üniversitesi Siyaset Bilimi mezunu. Önceki çalıştığı kurumlar: Hürriyet, Milliyet.",
+                resim: "https://via.placeholder.com/300x200/0056b3/ffffff?text=A.Y",
+                yazilar: 156,
+                goruntulenme: "2.5M"
+            },
+            {
+                ad: "Zeynep Kaya",
+                unvan: "Ekonomi Editörü",
+                biyografi: "İstanbul Üniversitesi İktisat Fakültesi mezunu. 15 yıldır ekonomi alanında uzmanlaşmış, uluslararası finans kuruluşlarında çalışmıştır.",
+                resim: "https://via.placeholder.com/300x200/0056b3/ffffff?text=Z.K",
+                yazilar: 203,
+                goruntulenme: "3.1M"
+            },
+            {
+                ad: "Mehmet Demir",
+                unvan: "Spor Muhabiri",
+                biyografi: "Spor gazeteciliğinde 18 yıl. UEFA ve FIFA akreditasyonlu. Futbol, basketbol ve Formula 1 uzmanı.",
+                resim: "https://via.placeholder.com/300x200/0056b3/ffffff?text=M.D",
+                yazilar: 412,
+                goruntulenme: "5.8M"
+            },
+            {
+                ad: "Elif Şahin",
+                unvan: "Dış Haberler Sorumlusu",
+                biyografi: "Boğaziçi Üniversitesi Uluslararası İlişkiler mezunu. Ortadoğu ve Balkanlar uzmanı. İngilizce ve Arapça bilmektedir.",
+                resim: "https://via.placeholder.com/300x200/0056b3/ffffff?text=E.Ş",
+                yazilar: 89,
+                goruntulenme: "1.2M"
+            }
+        ];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const grid = document.getElementById('authors-grid');
+            grid.innerHTML = '';
+            
+            yazarlar.forEach(yazar => {
+                const card = document.createElement('div');
+                card.className = 'author-card';
+                card.innerHTML = `
+                    <img src="${yazar.resim}" alt="${yazar.ad}" class="author-image">
+                    <div class="author-info">
+                        <h3 class="author-name">${yazar.ad}</h3>
+                        <p class="author-title">${yazar.unvan}</p>
+                        <p class="author-bio">${yazar.biyografi}</p>
+                        <div class="author-stats">
+                            <span>📝 ${yazar.yazilar} Yazı</span>
+                            <span>👁️ ${yazar.goruntulenme} Görüntülenme</span>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        });
+    </script>
+</body>
+</html>

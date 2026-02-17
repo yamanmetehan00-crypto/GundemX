@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Şikayet Bildir - GündemX</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .complaint-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .complaint-container h1 {
+            color: var(--primary);
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        .complaint-types {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .complaint-type {
+            padding: 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+        }
+        .complaint-type:hover, .complaint-type.active {
+            border-color: var(--primary);
+            background: #e3f2fd;
+        }
+        .complaint-type .icon {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+        .complaint-type h3 {
+            color: #333;
+            margin-bottom: 5px;
+        }
+        .complaint-type p {
+            color: #666;
+            font-size: 13px;
+        }
+        .form-section {
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 2px solid #eee;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            color: #333;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 15px;
+        }
+        .form-group textarea {
+            min-height: 150px;
+        }
+        .file-upload {
+            border: 2px dashed #ccc;
+            padding: 30px;
+            text-align: center;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .urgent-notice {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 0 8px 8px 0;
+        }
+        .submit-btn {
+            background: #dc3545;
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+        }
+        .submit-btn:hover {
+            background: #c82333;
+        }
+        .timeline {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+        .timeline h3 {
+            margin-bottom: 15px;
+            color: #333;
+        }
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            color: #555;
+        }
+        .timeline-step {
+            width: 30px;
+            height: 30px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="loading-screen">
+        <div class="loader-container">
+            <div class="loader-x">X</div>
+            <div class="loader-text">LOADING</div>
+            <div class="loader-bar"><div class="loader-progress"></div></div>
+        </div>
+    </div>
+
+    <header class="main-header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-left">
+                    <span class="date" id="current-date"></span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="header-main">
+            <div class="container">
+                <button class="menu-toggle" id="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <a href="./" class="logo">
+                    <span class="logo-text">Gündem</span>
+                    <span class="logo-dot">X</span>
+                </a>
+            </div>
+        </div>
+        
+        <nav class="main-nav" id="main-nav">
+            <div class="container">
+                <ul class="nav-list">
+                    <li><a href="./">ANA SAYFA</a></li>
+                    <li><a href="./iletisim.html">İLETİŞİM</a></li>
+                    <li><a href="./sikayet.html" class="active">ŞİKAYET</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content" style="margin-top: 20px; padding-bottom: 60px;">
+        <div class="container">
+            <div class="complaint-container">
+                <h1>ŞİKAYET BİLDİR</h1>
+                <p style="color: #666;">Haberlerimiz, yorumlar veya site içeriği hakkında şikayetlerinizi buradan iletebilirsiniz.</p>
+                
+                <div class="urgent-notice">
+                    <strong>⚠️ Acil Durumlar:</strong> Can güvenliği tehdidi, suç duyurusu gerektiren durumlar için lütfen doğrudan <strong>0543 329 88 27</strong> numaralı ihbar hattımızı veya emniyet güçlerini arayın.
+                </div>
+                
+                <h2 style="margin-top: 30px;">Şikayet Konusu Seçin</h2>
+                <div class="complaint-types">
+                    <div class="complaint-type" onclick="selectType(this, 'content')">
+                        <div class="icon">📰</div>
+                        <h3>Haber İçeriği</h3>
+                        <p>Yanlış, eksik veya yanıltıcı haber</p>
+                    </div>
+                    <div class="complaint-type" onclick="selectType(this, 'copyright')">
+                        <div class="icon">©️</div>
+                        <h3>Telif Hakkı</h3>
+                        <p>İçeriğiniz izinsiz kullanıldı</p>
+                    </div>
+                    <div class="complaint-type" onclick="selectType(this, 'comment')">
+                        <div class="icon">💬</div>
+                        <h3>Yorumlar</h3>
+                        <p>Hakaret, spam veya uygunsuz yorum</p>
+                    </div>
+                    <div class="complaint-type" onclick="selectType(this, 'privacy')">
+                        <div class="icon">🔒</div>
+                        <h3>Gizlilik İhlali</h3>
+                        <p>Özel bilgileriniz yayınlandı</p>
+                    </div>
+                    <div class="complaint-type" onclick="selectType(this, 'ethics')">
+                        <div class="icon">⚖️</div>
+                        <h3>Yayın İlkeleri</h3>
+                        <p>Tarafsızlık, doğruluk ihlali</p>
+                    </div>
+                    <div class="complaint-type" onclick="selectType(this, 'other')">
+                        <div class="icon">❓</div>
+                        <h3>Diğer</h3>
+                        <p>Farklı bir konu</p>
+                    </div>
+                </div>
+                
+                <div class="form-section">
+                    <h2>Şikayet Formu</h2>
+                    <form id="complaintForm" onsubmit="return submitComplaint(event)">
+                        <div class="form-group">
+                            <label>Şikayet Eden *</label>
+                            <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+                                <label style="display: flex; align-items: center; gap: 8px; font-weight: normal;">
+                                    <input type="radio" name="complainer_type" value="individual" checked onchange="toggleFields()">
+                                    <span>Birey (Kendim adına)</span>
+                                </label>
+                                <label style="display: flex; align-items: center; gap: 8px; font-weight: normal;">
+                                    <input type="radio" name="complainer_type" value="representative" onchange="toggleFields()">
+                                    <span>Temsilci (Başkası adına)</span>
+                                </label>
+                                <label style="display: flex; align-items: center; gap: 8px; font-weight: normal;">
+                                    <input type="radio" name="complainer_type" value="corporate" onchange="toggleFields()">
+                                    <span>Kurumsal</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group" id="corporateField" style="display: none;">
+                            <label>Kurum Adı *</label>
+                            <input type="text" name="corporate_name">
+                        </div>
+                        
+                        <div class="form-group" id="representativeField" style="display: none;">
+                            <label>Temsil Ettiğiniz Kişi/Kurum *</label>
+                            <input type="text" name="represented_party">
+                            <label style="margin-top: 10px;">Temsil Yetki Belgesi *</label>
+                            <div class="file-upload">
+                                <p>📎 Yetki belgesi yükleyin (PDF, JPG, PNG)</p>
+                                <input type="file" accept=".pdf,.jpg,.jpeg,.png" style="margin-top: 10px;">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Ad Soyad *</label>
+                            <input type="text" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>E-posta *</label>
+                            <input type="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Telefon *</label>
+                            <input type="tel" name="phone" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Şikayet Edilen İçerik (URL) *</label>
+                            <input type="url" name="content_url" placeholder="https://gundemx.online/haber/..." required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Şikayet Konusu Başlığı *</label>
+                            <input type="text" name="subject" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Şikayet Detayı *</label>
+                            <textarea name="details" placeholder="Şikayetinizi detaylı olarak açıklayın..." required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Talebiniz *</label>
+                            <select name="demand" required>
+                                <option value="">Seçiniz</option>
+                                <option value="remove">İçeriğin kaldırılması</option>
+                                <option value="correction">Düzeltme yapılması</option>
+                                <option value="response">Cevap hakkının kullanılması</option>
+                                <option value="apology">Özür dilenmesi</option>
+                                <option value="compensation">Tazminat talebi</option>
+                                <option value="other">Diğer</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Ek Dosyalar</label>
+                            <div class="file-upload">
+                                <p>📎 Belgelerinizi yükleyin (maks. 5 dosya, 10MB)</p>
+                                <input type="file" multiple accept=".pdf,.jpg,.jpeg,.png,.doc,.docx" style="margin-top: 10px;">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label style="display: flex; align-items: flex-start; gap: 10px; font-weight: normal; cursor: pointer;">
+                                <input type="checkbox" required style="margin-top: 5px;">
+                                <span style="font-size: 14px;">* Verdiğim bilgilerin doğru olduğunu, yanlış bilgi vermem halinde hukuki sorumluluğu kabul ettiğimi beyan ederim. <a href="./aydinlatma-metni.html" target="_blank">Aydınlatma Metni</a>'ni okudum.</span>
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">ŞİKAYETİ GÖNDER</button>
+                    </form>
+                </div>
+                
+                <div class="timeline">
+                    <h3>📋 Şikayet Süreci</h3>
+                    <div class="timeline-item">
+                        <div class="timeline-step">1</div>
+                        <span>Başvurunuz alınır ve kayıt numarası verilir</span>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-step">2</div>
+                        <span>Editoryal ekibimiz 3 iş günü içinde inceler</span>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-step">3</div>
+                        <span>Gerekirse ek bilgi talep edilir</span>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-step">4</div>
+                        <span>7 iş günü içinde karar bildirilir</span>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 30px; padding: 20px; background: #e8f5e9; border-radius: 8px;">
+                    <h3 style="margin-bottom: 10px;">⚖️ Alternatif Çözüm Yolları</h3>
+                    <p style="font-size: 14px; color: #555;">Şikayetiniz çözülmezse:</p>
+                    <ul style="margin-left: 20px; color: #555; font-size: 14px;">
+                        <li><strong>Basın Konseyi:</strong> 0212 222 60 60</li>
+                        <li><strong>Rekabet Kurumu:</strong> Reklam şikayetleri için</li>
+                        <li><strong>KVKK:</strong> Kişisel veri ihlalleri için</li>
+                        <li><strong>Mahkeme:</strong> Hukuki yol</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 GündemX. Tüm Hakları Saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        function selectType(element, type) {
+            document.querySelectorAll('.complaint-type').forEach(t => t.classList.remove('active'));
+            element.classList.add('active');
+        }
+        
+        function toggleFields() {
+            const type = document.querySelector('input[name="complainer_type"]:checked').value;
+            document.getElementById('corporateField').style.display = type === 'corporate' ? 'block' : 'none';
+            document.getElementById('representativeField').style.display = type === 'representative' ? 'block' : 'none';
+        }
+        
+        function submitComplaint(e) {
+            e.preventDefault();
+            const numara = 'ŞİK' + Date.now();
+            alert(`Şikayetiniz alındı!\n\nBaşvuru Numaranız: ${numara}\n\nBu numarayı kaydedin. En kısa sürede size dönüş yapılacaktır.`);
+            document.getElementById('complaintForm').reset();
+            return false;
+        }
+    </script>
+</body>
+</html>

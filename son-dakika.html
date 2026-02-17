@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Son Dakika Haberleri - GündemX</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .breaking-badge {
+            display: inline-block;
+            background: #ff0000;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+            animation: pulse 2s infinite;
+            margin-bottom: 10px;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--primary);
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #eee;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -34px;
+            top: 5px;
+            width: 10px;
+            height: 10px;
+            background: var(--primary);
+            border-radius: 50%;
+        }
+        .time-badge {
+            display: inline-block;
+            background: #f0f0f0;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        .live-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #ff0000;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .live-dot {
+            width: 10px;
+            height: 10px;
+            background: #ff0000;
+            border-radius: 50%;
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div id="loading-screen">
+        <div class="loader-container">
+            <div class="loader-x">X</div>
+            <div class="loader-text">LOADING</div>
+            <div class="loader-bar"><div class="loader-progress"></div></div>
+        </div>
+    </div>
+
+    <header class="main-header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-left">
+                    <span class="date" id="current-date"></span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="header-main">
+            <div class="container">
+                <button class="menu-toggle" id="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <a href="./" class="logo">
+                    <span class="logo-text">Gündem</span>
+                    <span class="logo-dot">X</span>
+                </a>
+            </div>
+        </div>
+        
+        <nav class="main-nav" id="main-nav">
+            <div class="container">
+                <ul class="nav-list">
+                    <li><a href="./">ANA SAYFA</a></li>
+                    <li><a href="./haberler/gundem/index.html">GÜNDEM</a></li>
+                    <li><a href="./haberler/ekonomi/index.html">EKONOMİ</a></li>
+                    <li><a href="./son-dakika.html" class="active" style="color: #ff0000;">SON DAKİKA</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content" style="margin-top: 20px;">
+        <div class="container">
+            <div class="live-indicator">
+                <span class="live-dot"></span>
+                <span>CANLI YAYIN</span>
+            </div>
+            <h1 style="color: var(--primary); margin-bottom: 10px; font-size: 32px;">SON DAKİKA HABERLERİ</h1>
+            <p style="color: #666; margin-bottom: 30px;">Anlık gelişmeler ve flaş haberler</p>
+            
+            <div class="timeline" id="timeline">
+                <!-- JS ile doldurulacak -->
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 GündemX. Tüm Hakları Saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        const sonDakikaHaberler = [
+            {
+                baslik: "Merkez Bankası Faiz Kararını Açıkladı",
+                saat: "18:15",
+                kategori: "Ekonomi",
+                ozet: "TCMB, politika faizini %42,5 seviyesinde sabit bıraktı. Piyasa beklentileriyle uyumlu karar sonrası dolar/TL sakin seyrediyor.",
+                onem: "high"
+            },
+            {
+                baslik: "İstanbul'da Trafik Kazası: 2 Yaralı",
+                saat: "17:45",
+                kategori: "Gündem",
+                ozet: "E-5 Karayolu'nda meydana gelen zincirleme trafik kazasında 2 kişi yaralandı. Trafik yoğunluğu yaşanıyor.",
+                onem: "normal"
+            },
+            {
+                baslik: "Spor Toto Süper Lig'de Flaş Transfer",
+                saat: "17:20",
+                kategori: "Spor",
+                ozet: "Galatasaray, Brezilyalı orta saha oyuncusu ile 3 yıllık sözleşme imzaladı. Transfer bedeli 8 milyon euro.",
+                onem: "high"
+            },
+            {
+                baslik: "AB'den Türkiye Açıklaması",
+                saat: "16:50",
+                kategori: "Dünya",
+                ozet: "Avrupa Birliği Komisyonu, Türkiye ile ilişkilerde yeni döneme ilişkin önemli açıklamalarda bulundu.",
+                onem: "high"
+            },
+            {
+                baslik: "Meteoroloji'den Yağış Uyarısı",
+                saat: "16:30",
+                kategori: "Gündem",
+                ozet: "Marmara ve Ege bölgeleri için sağanak yağış uyarısı yapıldı. Vatandaşların dikkatli olması istendi.",
+                onem: "normal"
+            }
+        ];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const timeline = document.getElementById('timeline');
+            timeline.innerHTML = '';
+            
+            sonDakikaHaberler.forEach(haber => {
+                const item = document.createElement('div');
+                item.className = 'timeline-item';
+                item.innerHTML = `
+                    <span class="breaking-badge">SON DAKİKA</span>
+                    <div class="time-badge">🕐 ${haber.saat}</div>
+                    <h3 style="font-size: 20px; margin-bottom: 10px; color: #333;">${haber.baslik}</h3>
+                    <span style="display: inline-block; background: var(--primary); color: white; padding: 2px 10px; border-radius: 10px; font-size: 12px; margin-bottom: 10px;">${haber.kategori}</span>
+                    <p style="color: #555; line-height: 1.6;">${haber.ozet}</p>
+                `;
+                timeline.appendChild(item);
+            });
+        });
+    </script>
+</body>
+</html>

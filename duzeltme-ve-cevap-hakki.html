@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Düzeltme ve Cevap Hakkı - GündemX</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .legal-content {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .legal-content h1 {
+            color: var(--primary);
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        .legal-content h2 {
+            color: #333;
+            font-size: 20px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        .legal-content p, .legal-content li {
+            color: #444;
+            line-height: 1.8;
+            margin-bottom: 15px;
+            font-size: 15px;
+        }
+        .rights-box {
+            background: #e3f2fd;
+            border-left: 4px solid var(--primary);
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .rights-box h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        .process-steps {
+            counter-reset: step;
+            margin: 30px 0;
+        }
+        .process-step {
+            position: relative;
+            padding-left: 60px;
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #eee;
+        }
+        .process-step::before {
+            counter-increment: step;
+            content: counter(step);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .form-container {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+        .form-container h3 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            color: #333;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+        }
+        .form-group textarea {
+            min-height: 150px;
+        }
+        .submit-btn {
+            background: var(--primary);
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .law-reference {
+            background: #fff3cd;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="loading-screen">
+        <div class="loader-container">
+            <div class="loader-x">X</div>
+            <div class="loader-text">LOADING</div>
+            <div class="loader-bar"><div class="loader-progress"></div></div>
+        </div>
+    </div>
+
+    <header class="main-header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-left">
+                    <span class="date" id="current-date"></span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="header-main">
+            <div class="container">
+                <button class="menu-toggle" id="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <a href="./" class="logo">
+                    <span class="logo-text">Gündem</span>
+                    <span class="logo-dot">X</span>
+                </a>
+            </div>
+        </div>
+        
+        <nav class="main-nav" id="main-nav">
+            <div class="container">
+                <ul class="nav-list">
+                    <li><a href="./">ANA SAYFA</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content" style="margin-top: 20px; padding-bottom: 60px;">
+        <div class="container">
+            <div class="legal-content">
+                <h1>DÜZELTME VE CEVAP HAKKI</h1>
+                
+                <div class="law-reference">
+                    <p><strong>Hukuki Dayanak:</strong> 5187 sayılı Basın Kanunu m. 14, 15, 16 ve 5651 sayılı İnternet Ortamında Yapılan Yayınların Düzenlenmesi ve Bu Yayınlar Yoluyla İşlenen Suçlarla Mücadele Edilmesi Hakkında Kanun</p>
+                </div>
+                
+                <div class="rights-box">
+                    <h3>📢 Haklarınız</h3>
+                    <p><strong>Düzeltme Hakkı:</strong> Hakkınızda çıkan haberin gerçeği yansıtmadığını düşünüyorsanız, doğrusunu bildirerek düzeltme talep edebilirsiniz.</p>
+                    <p><strong>Cevap Hakkı:</strong> Hakkınızda çıkan habere karşı görüşlerinizi aynı ölçüde ve aynı yerde yayınlanmak üzere bildirebilirsiniz.</p>
+                </div>
+                
+                <h2>BAŞVURU SÜRECİ</h2>
+                
+                <div class="process-steps">
+                    <div class="process-step">
+                        <h3>Başvuru Yapın</h3>
+                        <p>Aşağıdaki formu doldurun veya yamanmedya00@gmail.com adresine e-posta gönderin. Başvurunuzda haberin bağlantısını (URL) mutlaka belirtin.</p>
+                    </div>
+                    
+                    <div class="process-step">
+                        <h3>İnceleme</h3>
+                        <p>Editoryal ekibimiz başvurunuzu en geç 7 gün içinde inceler. Gerekirse ek bilgi talep edebiliriz.</p>
+                    </div>
+                    
+                    <div class="process-step">
+                        <h3>Karar ve Yayın</h3>
+                        <p>Haklı bulunmanız halinde:</p>
+                        <ul>
+                            <li><strong>Düzeltme:</strong> Haberin içinde düzeltme notu eklenir</li>
+                            <li><strong>Cevap:</strong> Görüşleriniz haberin altında veya ayrı bir sayfada yayınlanır</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <h2>BAŞVURU KOŞULLARI</h2>
+                <ul>
+                    <li>Başvuru, haberin yayınlandığı tarihten itibaren <strong>6 ay</strong> içinde yapılmalıdır</li>
+                    <li>Başvuru sahibi, haberde adı geçen kişi veya temsilcisi olmalıdır</li>
+                    <li>Düzeltme talebi somut ve kanıtlanabilir olmalıdır</li>
+                    <li>Cevap metni, ifade özgürlüğü sınırları içinde olmalıdır (hakaret, küfür içeremez)</li>
+                    <li>Cevap metni en fazla <strong>300 kelime</strong> olabilir (haber kadar)</li>
+                </ul>
+                
+                <div class="form-container">
+                    <h3>📝 Başvuru Formu</h3>
+                    <form onsubmit="return handleSubmit(event)">
+                        <div class="form-group">
+                            <label>Başvuru Türü *</label>
+                            <div style="display: flex; gap: 20px;">
+                                <label style="font-weight: normal;">
+                                    <input type="radio" name="type" value="correction" checked> Düzeltme Talebi
+                                </label>
+                                <label style="font-weight: normal;">
+                                    <input type="radio" name="type" value="response"> Cevap Hakkı
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Ad Soyad *</label>
+                            <input type="text" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>E-posta *</label>
+                            <input type="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Telefon *</label>
+                            <input type="tel" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Haber URL'si *</label>
+                            <input type="url" placeholder="https://gundemx.online/haber/..." required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Düzeltme/Cevap Metni *</label>
+                            <textarea placeholder="Düzeltme talebiniz veya cevap metninizi buraya yazın..." required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Kanıt Belgeleri (varsa)</label>
+                            <input type="file" multiple accept=".pdf,.jpg,.jpeg,.png">
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">BAŞVURUYU GÖNDER</button>
+                    </form>
+                </div>
+                
+                <div style="margin-top: 30px; padding: 20px; background: #ffebee; border-radius: 8px;">
+                    <h3>⏰ Süre ve Ret Halleri</h3>
+                    <p style="font-size: 14px; color: #555;">Başvurunuz 7 gün içinde değerlendirilir. Aşağıdaki hallerde ret edilebilir:</p>
+                    <ul style="font-size: 14px; color: #555;">
+                        <li>Süresi geçmiş başvurular</li>
+                        <li>Kamu menfaatini açıkça zedeleyen içerikler</li>
+                        <li>Hakaret, nefret söylemi içeren cevaplar</li>
+                        <li>Ticari reklam niteliğindeki başvurular</li>
+                    </ul>
+                </div>
+                
+                <h2>İLETİŞİM</h2>
+                <p>📧 <strong>E-posta:</strong> yamanmedya00@gmail.com</p>
+                <p>📞 <strong>Telefon:</strong> 0543 329 88 27</p>
+                <p>📮 <strong>Adres:</strong> Yaman Medya A.Ş., [Adres]</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 GündemX. Tüm Hakları Saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        function handleSubmit(e) {
+            e.preventDefault();
+            alert('Başvurunuz alındı! 7 gün içinde size dönüş yapılacaktır.');
+            return false;
+        }
+    </script>
+</body>
+</html>

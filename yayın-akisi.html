@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yayın Akışı - GündemX</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .schedule-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .schedule-container h1 {
+            color: var(--primary);
+            font-size: 32px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .schedule-tabs {
+            display: flex;
+            gap: 10px;
+            margin: 30px 0;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .schedule-tab {
+            padding: 12px 24px;
+            border: 2px solid var(--primary);
+            background: white;
+            color: var(--primary);
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        .schedule-tab.active, .schedule-tab:hover {
+            background: var(--primary);
+            color: white;
+        }
+        .timeline {
+            position: relative;
+            padding-left: 40px;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #e0e0e0;
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid var(--primary);
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -33px;
+            top: 30px;
+            width: 16px;
+            height: 16px;
+            background: var(--primary);
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px var(--primary);
+        }
+        .time-badge {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        .live-badge {
+            display: inline-block;
+            background: #ff0000;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-left: 10px;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        .category-tag {
+            display: inline-block;
+            padding: 4px 12px;
+            background: #e3f2fd;
+            color: var(--primary);
+            border-radius: 15px;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+        .special-program {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .special-program .category-tag {
+            background: rgba(255,255,255,0.2);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="loading-screen">
+        <div class="loader-container">
+            <div class="loader-x">X</div>
+            <div class="loader-text">LOADING</div>
+            <div class="loader-bar"><div class="loader-progress"></div></div>
+        </div>
+    </div>
+
+    <header class="main-header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-left">
+                    <span class="date" id="current-date"></span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="header-main">
+            <div class="container">
+                <button class="menu-toggle" id="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <a href="./" class="logo">
+                    <span class="logo-text">Gündem</span>
+                    <span class="logo-dot">X</span>
+                </a>
+            </div>
+        </div>
+        
+        <nav class="main-nav" id="main-nav">
+            <div class="container">
+                <ul class="nav-list">
+                    <li><a href="./">ANA SAYFA</a></li>
+                    <li><a href="./yayin-akisi.html" class="active">YAYIN AKIŞI</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content" style="margin-top: 20px; padding-bottom: 60px;">
+        <div class="container">
+            <div class="schedule-container">
+                <h1>YAYIN AKIŞI</h1>
+                <p style="text-align: center; color: #666; margin-bottom: 30px;">Canlı yayınlarımız ve özel programlarımız</p>
+                
+                <div class="schedule-tabs">
+                    <button class="schedule-tab active" onclick="showDay('monday')">Pazartesi</button>
+                    <button class="schedule-tab" onclick="showDay('tuesday')">Salı</button>
+                    <button class="schedule-tab" onclick="showDay('wednesday')">Çarşamba</button>
+                    <button class="schedule-tab" onclick="showDay('thursday')">Perşembe</button>
+                    <button class="schedule-tab" onclick="showDay('friday')">Cuma</button>
+                    <button class="schedule-tab" onclick="showDay('weekend')">Hafta Sonu</button>
+                </div>
+                
+                <div id="schedule-content">
+                    <div class="timeline" id="monday">
+                        <div class="timeline-item">
+                            <span class="time-badge">08:00</span>
+                            <span class="category-tag">GÜNDEM</span>
+                            <h3>Sabah Bülteni</h3>
+                            <p>Günün ilk haberleri ve gelişmeleri</p>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <span class="time-badge">10:00</span>
+                            <span class="category-tag">EKONOMİ</span>
+                            <h3>Piyasa Analizi</h3>
+                            <p>Ekonomi uzmanlarıyla güne bakış</p>
+                        </div>
+                        
+                        <div class="timeline-item special-program">
+                            <span class="time-badge">12:00</span>
+                            <span class="category-tag">ÖZEL YAYIN</span>
+                            <span class="live-badge">CANLI</span>
+                            <h3>Gündem Özel</h3>
+                            <p>Haftanın öne çıkan haberlerinin derinlemesine analizi</p>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <span class="time-badge">15:00</span>
+                            <span class="category-tag">SPOR</span>
+                            <h3>Spor Aktüel</h3>
+                            <p>Spor gündeminin son dakika gelişmeleri</p>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <span class="time-badge">18:00</span>
+                            <span class="category-tag">ANA HABER</span>
+                            <span class="live-badge">CANLI</span>
+                            <h3>Akşam Bülteni</h3>
+                            <p>Günün özet haberleri ve gelişmeler</p>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <span class="time-badge">21:00</span>
+                            <span class="category-tag">DÜNYA</span>
+                            <h3>Dünya Gündemi</h3>
+                            <p>Uluslararası haberler ve analizler</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 40px; padding: 25px; background: #e3f2fd; border-radius: 10px;">
+                    <h3 style="color: var(--primary); margin-bottom: 15px;">📺 Canlı Yayınlarımızı Takip Edin</h3>
+                    <p style="color: #555; margin-bottom: 15px;">Tüm canlı yayınlarımızı web sitemizden ve sosyal medya hesaplarımızdan izleyebilirsiniz.</p>
+                    <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                        <a href="#" style="padding: 10px 20px; background: #ff0000; color: white; text-decoration: none; border-radius: 5px;">YouTube</a>
+                        <a href="#" style="padding: 10px 20px; background: #000; color: white; text-decoration: none; border-radius: 5px;">X (Twitter)</a>
+                        <a href="#" style="padding: 10px 20px; background: #1877f2; color: white; text-decoration: none; border-radius: 5px;">Facebook</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 GündemX. Tüm Hakları Saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        const schedules = {
+            monday: document.getElementById('monday').innerHTML,
+            tuesday: `
+                <div class="timeline-item"><span class="time-badge">08:00</span><span class="category-tag">GÜNDEM</span><h3>Sabah Bülteni</h3><p>Günün ilk haberleri</p></div>
+                <div class="timeline-item"><span class="time-badge">11:00</span><span class="category-tag">TEKNOLOJİ</span><h3>Tekno Gündem</h3><p>Teknoloji dünyasından son gelişmeler</p></div>
+                <div class="timeline-item special-program"><span class="time-badge">14:00</span><span class="category-tag">RÖPORTAJ</span><span class="live-badge">CANLI</span><h3>Başkanla Soru-Cevap</h3><p>Canlı yayın soru-cevap programı</p></div>
+                <div class="timeline-item"><span class="time-badge">18:00</span><span class="category-tag">ANA HABER</span><span class="live-badge">CANLI</span><h3>Akşam Bülteni</h3><p>Günün özet haberleri</p></div>
+            `,
+            wednesday: `
+                <div class="timeline-item"><span class="time-badge">08:00</span><span class="category-tag">GÜNDEM</span><h3>Sabah Bülteni</h3><p>Günün ilk haberleri</p></div>
+                <div class="timeline-item"><span class="time-badge">13:00</span><span class="category-tag">SAĞLIK</span><h3>Sağlıklı Yaşam</h3><p>Sağlık uzmanlarıyla bilgilendirme</p></div>
+                <div class="timeline-item special-program"><span class="time-badge">16:00</span><span class="category-tag">MAGAZİN</span><span class="live-badge">CANLI</span><h3>Magazin Turu</h3><p>Ünlüler dünyasından haberler</p></div>
+                <div class="timeline-item"><span class="time-badge">18:00</span><span class="category-tag">ANA HABER</span><span class="live-badge">CANLI</span><h3>Akşam Bülteni</h3><p>Günün özet haberleri</p></div>
+            `,
+            thursday: `
+                <div class="timeline-item"><span class="time-badge">08:00</span><span class="category-tag">GÜNDEM</span><h3>Sabah Bülteni</h3><p>Günün ilk haberleri</p></div>
+                <div class="timeline-item"><span class="time-badge">10:00</span><span class="category-tag">EKONOMİ</span><h3>Ekonomi Sohbetleri</h3><p>İş dünyasından konuklar</p></div>
+                <div class="timeline-item"><span class="time-badge">15:00</span><span class="category-tag">SPOR</span><h3>Spor Aktüel</h3><p>Spor gündemi</p></div>
+                <div class="timeline-item"><span class="time-badge">18:00</span><span class="category-tag">ANA HABER</span><span class="live-badge">CANLI</span><h3>Akşam Bülteni</h3><p>Günün özet haberleri</p></div>
+            `,
+            friday: `
+                <div class="timeline-item"><span class="time-badge">08:00</span><span class="category-tag">GÜNDEM</span><h3>Sabah Bülteni</h3><p>Günün ilk haberleri</p></div>
+                <div class="timeline-item special-program"><span class="time-badge">11:00</span><span class="category-tag">HAFTALIK</span><span class="live-badge">CANLI</span><h3>Hafta Sonu Planlayıcı</h3><p>Hafta sonu etkinlikleri ve hava durumu</p></div>
+                <div class="timeline-item"><span class="time-badge">14:00</span><span class="category-tag">DÜNYA</span><h3>Küresel Bakış</h3><p>Uluslararası haberler</p></div>
+                <div class="timeline-item"><span class="time-badge">18:00</span><span class="category-tag">ANA HABER</span><span class="live-badge">CANLI</span><h3>Hafta Sonu Bülteni</h3><p>Haftanın öne çıkanları</p></div>
+            `,
+            weekend: `
+                <div class="timeline-item"><span class="time-badge">09:00</span><span class="category-tag">GÜNDEM</span><h3>Hafta Sonu Bülteni</h3><p>Güne başlangıç</p></div>
+                <div class="timeline-item"><span class="time-badge">11:00</span><span class="category-tag">YAŞAM</span><h3>Hafta Sonu Yaşam</h3><p>Kültür-sanat, gezi, lezzet</p></div>
+                <div class="timeline-item special-program"><span class="time-badge">14:00</span><span class="category-tag">BELGESEL</span><h3>Özel Belgesel</h3><p>Haftanın belgeseli</p></div>
+                <div class="timeline-item"><span class="time-badge">16:00</span><span class="category-tag">SPOR</span><h3>Hafta Sonu Spor</h3><p>Maç özetleri ve yorumlar</p></div>
+                <div class="timeline-item"><span class="time-badge">19:00</span><span class="category-tag">ANA HABER</span><h3>Akşam Bülteni</h3><p>Günün haberleri</p></div>
+            `
+        };
+        
+        function showDay(day) {
+            document.querySelectorAll('.schedule-tab').forEach(tab => tab.classList.remove('active'));
+            event.target.classList.add('active');
+            document.getElementById('schedule-content').innerHTML = `<div class="timeline" id="${day}">${schedules[day]}</div>`;
+        }
+    </script>
+</body>
+</html>

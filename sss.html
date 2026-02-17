@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sıkça Sorulan Sorular - GündemX</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .faq-container h1 {
+            color: var(--primary);
+            font-size: 28px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .faq-category {
+            margin-bottom: 40px;
+        }
+        .faq-category h2 {
+            color: #333;
+            font-size: 22px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary);
+        }
+        .faq-item {
+            margin-bottom: 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .faq-question {
+            background: #f8f9fa;
+            padding: 18px 20px;
+            cursor: pointer;
+            font-weight: 600;
+            color: #333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s;
+        }
+        .faq-question:hover {
+            background: #e9ecef;
+        }
+        .faq-question::after {
+            content: '+';
+            font-size: 24px;
+            color: var(--primary);
+        }
+        .faq-question.active::after {
+            content: '-';
+        }
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s, padding 0.3s;
+            color: #555;
+            line-height: 1.6;
+        }
+        .faq-answer.active {
+            padding: 20px;
+            max-height: 500px;
+        }
+        .contact-cta {
+            background: linear-gradient(135deg, var(--primary) 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 40px;
+        }
+        .contact-cta h3 {
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        .contact-cta a {
+            color: white;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div id="loading-screen">
+        <div class="loader-container">
+            <div class="loader-x">X</div>
+            <div class="loader-text">LOADING</div>
+            <div class="loader-bar"><div class="loader-progress"></div></div>
+        </div>
+    </div>
+
+    <header class="main-header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-left">
+                    <span class="date" id="current-date"></span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="header-main">
+            <div class="container">
+                <button class="menu-toggle" id="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <a href="./" class="logo">
+                    <span class="logo-text">Gündem</span>
+                    <span class="logo-dot">X</span>
+                </a>
+            </div>
+        </div>
+        
+        <nav class="main-nav" id="main-nav">
+            <div class="container">
+                <ul class="nav-list">
+                    <li><a href="./">ANA SAYFA</a></li>
+                    <li><a href="./iletisim.html">İLETİŞİM</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content" style="margin-top: 20px; padding-bottom: 60px;">
+        <div class="container">
+            <div class="faq-container">
+                <h1>SIKÇA SORULAN SORULAR (SSS)</h1>
+                
+                <div class="faq-category">
+                    <h2>🔐 Hesap ve Üyelik</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Üyelik ücretli mi?</div>
+                        <div class="faq-answer">Hayır, GündemX standart üyeliği tamamen ücretsizdir. Tüm haberlere ücretsiz erişebilir, yorum yapabilir ve bültenlere abone olabilirsiniz.</div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Şifremi unuttum, ne yapmalıyım?</div>
+                        <div class="faq-answer">Giriş sayfasındaki "Şifremi Unuttum" linkine tıklayarak e-posta adresinizi girin. Size şifre sıfırlama bağlantısı gönderilecektir.</div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Üyeliğimi nasıl iptal edebilirim?</div>
+                        <div class="faq-answer">Hesap ayarlarından "Üyeliği Sonlandır" seçeneğini kullanabilir veya yamanmedya00@gmail.com adresine e-posta gönderebilirsiniz.</div>
+                    </div>
+                </div>
+                
+                <div class="faq-category">
+                    <h2>📰 İçerik ve Haberler</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Haberlerinizin kaynağı nedir?</div>
+                        <div class="faq-answer">Haberlerimiz; AA, DHA, İHA gibi ajanslardan, muhabirlerimizden, resmi kurum açıklamalarından ve doğrulanmış kaynaklardan derlenmektedir.</div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Eski haberlere nasıl ulaşabilirim?</div>
+                        <div class="faq-answer">Arama çubuğunu kullanarak veya ilgili kategori sayfalarından arşivimize erişebilirsiniz. Premium üyeler (varsa) tam arşiv erişimine sahiptir.</div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Haberlerde hata görürsem ne yapmalıyım?</div>
+                        <div class="faq-answer">Haberin altındaki "Hata Bildir" butonunu kullanabilir veya yamanmedya00@gmail.com adresine e-posta gönderebilirsiniz.</div>
+                    </div>
+                </div>
+                
+                <div class="faq-category">
+                    <h2>💬 Yorumlar ve Topluluk</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Neden yorumum yayınlanmadı?</div>
+                        <div class="faq-answer">Yorumlarınız moderasyon sürecinden geçer. Hakaret, spam, nefret söylemi veya yasadışı içerik içeren yorumlar yayınlanmaz.</div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Yorumumu nasıl silebilirim?</div>
+                        <div class="faq-answer">Kendi yorumlarınızın yanındaki "Sil" butonunu kullanabilirsiniz. Yayınlanmış yorumlar için yamanmedya00@gmail.com adresine talep gönderebilirsiniz.</div>
+                    </div>
+                </div>
+                
+                <div class="faq-category">
+                    <h2>📧 Bülten ve Bildirimler</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">E-posta bülteninden nasıl çıkabilirim?</div>
+                        <div class="faq-answer">Gelen bültenin altındaki "Abonelikten Çık" linkine tıklayabilir veya hesap ayarlarından e-posta tercihlerinizi güncelleyebilirsiniz.</div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Mobil bildirimleri nasıl kapatırım?</div>
+                        <div class="faq-answer">Tarayıcı ayarlarından veya mobil uygulama ayarlarından bildirim tercihlerinizi yönetebilirsiniz.</div>
+                    </div>
+                </div>
+                
+                <div class="faq-category">
+                    <h2>⚖️ Yasal Haklar</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Hakkımda haber çıktı, cevap hakkımı nasıl kullanırım?</div>
+                        <div class="faq-answer">yamanmedya00@gmail.com adresine kimlik bilgilerinizle birlikte cevap metninizi gönderebilirsiniz. Talebiniz 7 gün içinde değerlendirilir.</div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Kişisel verilerimi nasıl sildirebilirim?</div>
+                        <div class="faq-answer">KVKK kapsamında silme talebinizi yamanmedya00@gmail.com adresine iletebilirsiniz. Talebiniz 30 gün içinde sonuçlandırılır.</div>
+                    </div>
+                </div>
+                
+                <div class="faq-category">
+                    <h2>📱 Teknik Sorunlar</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Siteye giremiyorum, ne yapmalıyım?</div>
+                        <div class="faq-answer">Tarayıcı önbelleğini temizlemeyi, farklı bir tarayıcı denemeyi veya internet bağlantınızı kontrol etmeyi deneyin. Sorun devam ederse bize bildirin.</div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Mobil uygulamanız var mı?</div>
+                        <div class="faq-answer">Şu an için mobil uyumlu web sitemizi kullanabilirsiniz. iOS ve Android uygulamalarımız çok yakında hizmetinizde olacak.</div>
+                    </div>
+                </div>
+                
+                <div class="contact-cta">
+                    <h3>Cevabını bulamadınız mı?</h3>
+                    <p>Bizimle iletişime geçin: <a href="mailto:yamanmedya00@gmail.com">yamanmedya00@gmail.com</a></p>
+                    <p>İhbar Hattı: <strong>0543 329 88 27</strong></p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 GündemX. Tüm Hakları Saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const isActive = answer.classList.contains('active');
+                
+                // Close all
+                document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('active'));
+                document.querySelectorAll('.faq-question').forEach(q => q.classList.remove('active'));
+                
+                // Open clicked if wasn't active
+                if (!isActive) {
+                    answer.classList.add('active');
+                    question.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

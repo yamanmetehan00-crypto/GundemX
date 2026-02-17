@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Künye - GündemX</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .kunye-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .kunye-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 3px solid var(--primary);
+        }
+        .kunye-header h1 {
+            color: var(--primary);
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        .kunye-section {
+            margin-bottom: 35px;
+        }
+        .kunye-section h2 {
+            color: #333;
+            font-size: 20px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+        }
+        .info-row {
+            display: flex;
+            margin-bottom: 15px;
+            padding: 12px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        .info-label {
+            width: 200px;
+            font-weight: 600;
+            color: #555;
+        }
+        .info-value {
+            flex: 1;
+            color: #333;
+        }
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .team-member {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .team-member h4 {
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+        .team-member p {
+            color: #666;
+            font-size: 14px;
+        }
+        .certificate-box {
+            background: #e8f5e9;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="loading-screen">
+        <div class="loader-container">
+            <div class="loader-x">X</div>
+            <div class="loader-text">LOADING</div>
+            <div class="loader-bar"><div class="loader-progress"></div></div>
+        </div>
+    </div>
+
+    <header class="main-header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-left">
+                    <span class="date" id="current-date"></span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="header-main">
+            <div class="container">
+                <button class="menu-toggle" id="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <a href="./" class="logo">
+                    <span class="logo-text">Gündem</span>
+                    <span class="logo-dot">X</span>
+                </a>
+            </div>
+        </div>
+        
+        <nav class="main-nav" id="main-nav">
+            <div class="container">
+                <ul class="nav-list">
+                    <li><a href="./">ANA SAYFA</a></li>
+                    <li><a href="./kunye.html" class="active">KÜNYE</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content" style="margin-top: 20px; padding-bottom: 60px;">
+        <div class="container">
+            <div class="kunye-container">
+                <div class="kunye-header">
+                    <h1>KÜNYE</h1>
+                    <p style="color: #666;">GündemX - Yaman Medya A.Ş.</p>
+                </div>
+                
+                <div class="kunye-section">
+                    <h2>🏢 Kurumsal Bilgiler</h2>
+                    <div class="info-row">
+                        <div class="info-label">Yayın Sahibi</div>
+                        <div class="info-value">Yaman Medya Anonim Şirketi</div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-label">Ticaret Sicil No</div>
+                        <div class="info-value">[Sicil Numarası]</div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-label">Mersis No</div>
+                        <div class="info-value">[Mersis Numarası]</div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-label">Vergi No</div>
+                        <div class="info-value">[Vergi Numarası]</div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-label">Vergi Dairesi</div>
+                        <div class="info-value">[Vergi Dairesi]</div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-label">Merkez Adres</div>
+                        <div class="info-value">[Mahalle], [Cadde], [No], [İlçe]/[İl], Türkiye</div>
+                    </div>
+                </div>
+                
+                <div class="kunye-section">
+                    <h2>👥 Yönetim</h2>
+                    <div class="info-row">
+                        <div class="info-label">Genel Yayın Yönetmeni</div>
+                        <div class="info-value">[İsim Soyisim]</div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-label">Genel Müdür</div>
+                        <div class="info-value">[İsim Soyisim]</div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-label">Sorumlu Müdür</div>
+                        <div class="info-value">[İsim Soyisim]</div>
+                    </div>
+                </div>
+                
+                <div class="kunye-section">
+                    <h2>📞 İletişim</h2>
+                    <div class="info-row">
+                        <div class="info-label">E-posta</div>
+                        <div class="info-value">yamanmedya00@gmail.com</div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-label">İhbar Hattı</div>
+                        <div class="info-value">0543 329 88 27</div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-label">Telefon</div>
+                        <div class="info-value">[Telefon Numarası]</div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-label">Faks</div>
+                        <div class="info-value">[Faks Numarası]</div>
+                    </div>
+                </div>
+                
+                <div class="kunye-section">
+                    <h2>🌐 Dijital Platformlar</h2>
+                    <div class="info-row">
+                        <div class="info-label">Web Sitesi</div>
+                        <div class="info-value">www.gundemx.online</div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-label">Mobil Uygulama</div>
+                        <div class="info-value">iOS ve Android (Yakında)</div>
+                    </div>
+                </div>
+                
+                <div class="kunye-section">
+                    <h2>📰 Editör Kadrosu</h2>
+                    <div class="team-grid">
+                        <div class="team-member">
+                            <h4>Gündem Editörü</h4>
+                            <p>[İsim Soyisim]</p>
+                        </div>
+                        <div class="team-member">
+                            <h4>Ekonomi Editörü</h4>
+                            <p>[İsim Soyisim]</p>
+                        </div>
+                        <div class="team-member">
+                            <h4>Spor Editörü</h4>
+                            <p>[İsim Soyisim]</p>
+                        </div>
+                        <div class="team-member">
+                            <h4>Dünya Editörü</h4>
+                            <p>[İsim Soyisim]</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="kunye-section">
+                    <h2>⚖️ Yasal Bilgiler</h2>
+                    <div class="info-row">
+                        <div class="info-label">Yayın Türü</div>
+                        <div class="info-value">İnternet Haber Sitesi</div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-label">Yayın Merkezi</div>
+                        <div class="info-value">[Adres]</div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-label">Yayın İlkeleri</div>
+                        <div class="info-value"><a href="./yayin-ilkeleri.html">Yayın İlkelerimiz</a></div>
+                    </div>
+                </div>
+                
+                <div class="certificate-box">
+                    <h3>✓ Yer Sağlayıcı Bilgisi</h3>
+                    <p>Bu site 5651 sayılı Kanun uyarınca Yer Sağlayıcı olarak faaliyet göstermektedir.</p>
+                    <p style="margin-top: 10px; font-size: 14px; color: #666;">Yer Sağlayıcı Belge No: [Belge Numarası]</p>
+                </div>
+                
+                <div style="margin-top: 30px; text-align: center; color: #888; font-size: 14px;">
+                    <p>© 2026 Yaman Medya A.Ş. Tüm Hakları Saklıdır.</p>
+                    <p style="margin-top: 10px;">Bu künye bilgileri 16.02.2026 tarihi itibarıyla geçerlidir.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 GündemX. Tüm Hakları Saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

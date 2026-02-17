@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kişisel Verilerin Korunması - GündemX</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .legal-content {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .legal-content h1 {
+            color: var(--primary);
+            font-size: 28px;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--primary);
+        }
+        .legal-content h2 {
+            color: #333;
+            font-size: 20px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        .legal-content p, .legal-content li {
+            color: #444;
+            line-height: 1.8;
+            margin-bottom: 15px;
+            font-size: 15px;
+        }
+        .legal-content ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        .principle-box {
+            background: #f8f9fa;
+            border-left: 4px solid #28a745;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .warning-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="loading-screen">
+        <div class="loader-container">
+            <div class="loader-x">X</div>
+            <div class="loader-text">LOADING</div>
+            <div class="loader-bar"><div class="loader-progress"></div></div>
+        </div>
+    </div>
+
+    <header class="main-header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-left">
+                    <span class="date" id="current-date"></span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="header-main">
+            <div class="container">
+                <button class="menu-toggle" id="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <a href="./" class="logo">
+                    <span class="logo-text">Gündem</span>
+                    <span class="logo-dot">X</span>
+                </a>
+            </div>
+        </div>
+        
+        <nav class="main-nav" id="main-nav">
+            <div class="container">
+                <ul class="nav-list">
+                    <li><a href="./">ANA SAYFA</a></li>
+                    <li><a href="./haberler/gundem/index.html">GÜNDEM</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content" style="margin-top: 20px; padding-bottom: 60px;">
+        <div class="container">
+            <div class="legal-content">
+                <h1>KİŞİSEL VERİLERİN KORUNMASI POLİTİKASI</h1>
+                
+                <p>GündemX olarak, 6698 sayılı Kişisel Verilerin Korunması Kanunu'na ("KVKK") tam uyum sağlamaktayız. Bu politika, kişisel verilerinizin nasıl korunduğunu ve işlendiğini açıklamaktadır.</p>
+                
+                <h2>1. TEMEL İLKELERİMİZ</h2>
+                
+                <div class="principle-box">
+                    <h3>Hukuka ve Dürüstlük Kurallarına Uygun İşleme</h3>
+                    <p>Tüm veri işleme faaliyetlerimizde hukuka uygun hareket eder, dürüstlük kurallarına riayet ederiz.</p>
+                </div>
+                
+                <div class="principle-box">
+                    <h3>Doğru ve Güncel Olma</h3>
+                    <p>Kişisel verilerinizin doğru ve güncel olmasını sağlamak için gerekli önlemleri alırız. Yanlış veri tespitinde düzeltme işlemi yapılır.</p>
+                </div>
+                
+                <div class="principle-box">
+                    <h3>Belirli, Açık ve Meşru Amaçlarla İşleme</h3>
+                    <p>Verilerinizi sadece belirtilen amaçlar doğrultusunda ve amaçla bağlantılı olarak işleriz.</p>
+                </div>
+                
+                <div class="principle-box">
+                    <h3>İşlendikleri Amaçla Bağlantılı, Sınırlı ve Ölçülü Olma</h3>
+                    <p>Amaca uygun veri işleme ilkesi gereği, gereksiz veri toplamaz, işlemez ve saklamayız.</p>
+                </div>
+                
+                <div class="principle-box">
+                    <h3>İlgili Mevzuatta Öngörülen veya İşlendikleri Amaç İçin Gerekli Olan Süre Kadar Muhafaza Etme</h3>
+                    <p>Verilerinizi yasal süreler ve işleme amacının gerektirdiği süre kadar saklarız.</p>
+                </div>
+                
+                <h2>2. VERİ GÜVENLİĞİ ÖNLEMLERİ</h2>
+                <p>Kişisel verilerinizin güvenliği için aşağıdaki teknik ve idari önlemleri almaktayız:</p>
+                
+                <h3>Teknik Önlemler:</h3>
+                <ul>
+                    <li>SSL şifreleme ile veri iletimi</li>
+                    <li>Güvenlik duvarları (Firewall) ve antivirüs sistemleri</li>
+                    <li>Çok faktörlü kimlik doğrulama (MFA)</li>
+                    <li>Düzenli güvenlik testleri ve penetrasyon testleri</li>
+                    <li>Veri şifreleme (hem durumda hem aktarımda)</li>
+                    <li>Güvenli sunucu altyapısı ve yedekleme sistemleri</li>
+                </ul>
+                
+                <h3>İdari Önlemler:</h3>
+                <ul>
+                    <li>Çalışanlarımıza KVKK eğitimleri</li>
+                    <li>Gizlilik sözleşmeleri ve taahhütnameler</li>
+                    <li>Erişim yetkilendirme ve loglama sistemleri</li>
+                    <li>Veri ihlali müdahale planı</li>
+                    <li>Düzenli denetim ve risk değerlendirmeleri</li>
+                </ul>
+                
+                <h2>3. VERİ İHLALLERİNE KARŞI POLİTİKAMIZ</h2>
+                
+                <div class="warning-box">
+                    <p><strong>Veri İhlali Bildirimi:</strong> Kişisel verilerinizin yetkisiz erişim, kayıp veya zarar görmesi durumunda:</p>
+                    <ul>
+                        <li>72 saat içinde Kişisel Verileri Koruma Kurumu'na bildirim yapılır</li>
+                        <li>Etkilenen kullanıcılarımıza derhal bilgilendirme yapılır</li>
+                        <li>Gerekli teknik ve hukuki önlemler alınır</li>
+                    </ul>
+                </div>
+                
+                <h2>4. VERİ SAKLAMA SÜRELERİ</h2>
+                <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                    <tr style="background: var(--primary); color: white;">
+                        <th style="padding: 12px; text-align: left; border: 1px solid #ddd;">Veri Kategorisi</th>
+                        <th style="padding: 12px; text-align: left; border: 1px solid #ddd;">Saklama Süresi</th>
+                        <th style="padding: 12px; text-align: left; border: 1px solid #ddd;">Hukuki Dayanak</th>
+                    </tr>
+                    <tr>
+                        <td style="padding: 12px; border: 1px solid #ddd;">Üyelik Bilgileri</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">Üyelik süresi + 3 yıl</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">KVKK, TBK</td>
+                    </tr>
+                    <tr style="background: #f9f9f9;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">İletişim Kayıtları</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">5 yıl</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">Hukuki yükümlülük</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 12px; border: 1px solid #ddd;">Çerez Verileri</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">2 yıl veya oturum sonu</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">Açık rıza</td>
+                    </tr>
+                    <tr style="background: #f9f9f9;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">İhbar/Şikayet Kayıtları</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">10 yıl</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">Basın Kanunu, Ceza Muhakemesi Kanunu</td>
+                    </tr>
+                </table>
+                
+                <h2>5. ÇOCUKLARIN VERİLERİ</h2>
+                <p>18 yaş altı çocukların kişisel verileri özel koruma altındadır. Web sitemizde 13 yaş altı çocuklardan bilerek veri toplanmaz. 13-18 yaş arası bireylerden veri toplanması ebeveyn veya vasinin rızasına tabidir.</p>
+                
+                <h2>6. VERİ SİLME VE YOK ETME</h2>
+                <p>Saklama süresi dolan veya işleme amacı ortadan kalkan kişisel verileriniz:</p>
+                <ul>
+                    <li>Tamamen silinir (soft delete + hard delete)</li>
+                    <li>Fiziksel ortamdaki belgeler imha edilir</li>
+                    <li>Yedeklerden periyodik olarak temizlenir</li>
+                    <li>Silme işlemi kayıt altına alınır</li>
+                </ul>
+                
+                <h2>7. BAŞVURU VE İLETİŞİM</h2>
+                <p>KVKK kapsamındaki talepleriniz için:</p>
+                <p>📧 <strong>E-posta:</strong> yamanmedya00@gmail.com</p>
+                <p>📮 <strong>Adres:</strong> [Şirket Adresi]</p>
+                <p>⏱️ <strong>Yanıt Süresi:</strong> En geç 30 gün</p>
+                
+                <p style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #ddd; color: #666; font-size: 14px;">
+                    Bu politika 16.02.2026 tarihinde yürürlüğe girmiştir.
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 GündemX. Tüm Hakları Saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
